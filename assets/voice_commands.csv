@@ -1,0 +1,691 @@
+lang,module,voice_command
+en,dashboard,go to dashboard
+en,dashboard,go to dashboard page
+en,dashboard,go to my dashboard page
+en,dashboard,go to dashboard screen
+en,dashboard,show my dashboard
+en,dashboard,show my dashboard page
+en,dashboard,show my dashboard screen
+en,dashboard,please go to dashboard
+en,dashboard,please go to my dashboard
+en,dashboard,please go to dashboard page
+en,dashboard,please go to my dashboard page
+en,dashboard,please go to dashboard screen
+en,dashboard,dashboard
+en,dashboard,please show dashboard screen
+en,dashboard,please show dashboard page
+en,dashboard,my dashboard
+en,dashboard,dashboard screen
+en,dashboard,show dashboard
+en,dashboard,display dashboard
+en,dashboard,display dashboard screen
+en,dashboard,go to my dashboard
+en,dashboard,please go to my dashboard screen
+en,dashboard,go to my dashboard screen
+en,dashboard,please take me to my dashboard
+en,dashboard,take me to my dashboard
+en,dashboard,please take me to my dashboard screen
+en,dashboard,take me to my dashboard screen
+en,dashboard,please take me to my dashboard page
+en,dashboard,take me to my dashboard page
+en,dashboard,please move to my dashboard
+en,dashboard,move to my dashboard
+en,dashboard,please move to my dashboard page
+en,dashboard,move to my dashboard page
+en,dashboard,please move to my dashboard screen
+en,dashboard,move to my dashboard screen
+en,dashboard,please show me my dashboard
+en,dashboard,show me my dashboard
+en,dashboard,please show me my dashboard page
+en,dashboard,show me my dashboard page
+en,dashboard,please show me my dashboard screen
+en,dashboard,show me my dashboard screen
+en,dashboard,please go to the dashboard
+en,dashboard,go to the dashboard
+en,dashboard,please go to the dashboard page
+en,dashboard,go to the dashboard page
+en,dashboard,please go to the dashboard screen
+en,dashboard,go to the dashboard screen
+en,dashboard,please take me to the dashboard
+en,dashboard,take me to the dashboard
+en,dashboard,please take me to dashboard
+en,dashboard,take me to dashboard
+en,dashboard,please take me to dashboard screen
+en,dashboard,take me to dashboard screen
+en,dashboard,please take me to the dashboard screen
+en,dashboard,take me to the dashboard screen
+en,dashboard,please take me to dashboard page
+en,dashboard,take me to dashboard page
+en,dashboard,please take me to the dashboard page
+en,dashboard,take me to the dashboard page
+en,dashboard,please move to dashboard
+en,dashboard,move to dashboard
+en,dashboard,please move to dashboard page
+en,dashboard,move to dashboard page
+en,dashboard,please move to the dashboard page
+en,dashboard,move to the dashboard page
+en,dashboard,please move to dashboard screen
+en,dashboard,move to dashboard screen
+en,dashboard,please move to the dashboard screen
+en,dashboard,move to the dashboard screen
+en,dashboard,please show me dashboard
+en,dashboard,show me dashboard
+en,dashboard,please show me the dashboard
+en,dashboard,show me the dashboard
+en,dashboard,please show me dashboard page
+en,dashboard,show me dashboard page
+en,dashboard,please show me the dashboard page
+en,dashboard,show me the dashboard page
+en,dashboard,please show me dashboard screen
+en,dashboard,please show me the dashboard screen
+en,dashboard,show me the dashboard screen
+en,dashboard,please move me to dashboard
+en,dashboard,move me to dashboard
+en,dashboard,please move me to the dashboard
+en,dashboard,move me to the dashboard
+en,dashboard,please move me to dashboard page
+en,dashboard,move me to dashboard page
+en,dashboard,please move me to the dashboard page
+en,dashboard,move me to the dashboard page
+en,dashboard,please move me to dashboard screen
+en,dashboard,move me to dashboard screen
+en,dashboard,please move me to the dashboard screen
+en,dashboard,move me to the dashboard screen
+en,dashboard,show the dashboard
+en,dashboard,show the dashboard screen
+en,dashboard,show the dashboard page
+en,dashboard,please show the dashboard
+en,dashboard,please show the dashboard screen
+en,dashboard,please show the dashboard page
+en,dashboard,please open the dashboard page
+en,dashboard,open the dashboard page
+en,dashboard,please open the dashboard screen
+en,dashboard,open the dashboard screen
+en,dashboard,please open the dashboard
+en,dashboard,open the dashboard
+en,dashboard,jump to dashboard
+en,dashboard,please jump to dashboard
+en,dashboard,jump to the dashboard
+en,dashboard,please jump to the dashboard
+en,dashboard,jump to dashboard page
+en,dashboard,please jump to dashboard page
+en,dashboard,jump to the dashboard page
+en,dashboard,please jump to the dashboard page
+en,dashboard,jump to dashboard screen
+en,dashboard,please jump to dashboard screen
+en,dashboard,jump to the dashboard screen
+en,dashboard,please jump to the dashboard screen
+en,dashboard,redirect to dashboard
+en,dashboard,please redirect to dashboard
+en,dashboard,redirect to the dashboard
+en,dashboard,please redirect to the dashboard
+en,dashboard,redirect to dashboard page
+en,dashboard,please redirect to dashboard page
+en,dashboard,redirect to the dashboard page
+en,dashboard,please redirect to the dashboard page
+en,dashboard,redirect to dashboard screen
+en,dashboard,please redirect to dashboard screen
+en,dashboard,redirect to the dashboard screen
+en,dashboard,display the dashboard
+en,dashboard,please display the dashboard
+en,dashboard,display the dashboard page
+en,dashboard,please display the dashboard page
+en,dashboard,display the dashboard screen
+en,dashboard,please display the dashboard screen
+en,dashboard,let's go to dashboard
+en,dashboard,let's go to the dashboard
+en,dashboard,let's go to dashboard page
+en,dashboard,let's go to the dashboard page
+en,dashboard,let's go to dashboard screen
+en,dashboard,let's go to the dashboard screen
+en,dashboard,take me into dashboard
+en,dashboard,please take me into dashboard
+en,dashboard,take me into the dashboard
+en,dashboard,please take me into the dashboard
+en,dashboard,take me into dashboard screen
+en,dashboard,please take me into dashboard screen
+en,dashboard,take me into the dashboard screen
+en,dashboard,please take me into the dashboard screen
+en,dashboard,take me into dashboard page
+en,dashboard,please take me into dashboard page
+en,dashboard,take me into the dashboard page
+en,dashboard,please take me into the dashboard page
+en,dashboard,check dashboard
+en,dashboard,please check dashboard
+en,dashboard,check the dashboard
+en,dashboard,please check the dashboard
+en,dashboard,check dashboard page
+en,dashboard,please check dashboard page
+en,dashboard,check the dashboard page
+en,dashboard,please check the dashboard page
+en,dashboard,check dashboard screen
+en,dashboard,please check dashboard screen
+en,dashboard,check the dashboard screen
+en,dashboard,please check the dashboard screen
+en,dashboard,please move me to my dashboard
+en,dashboard,move me to my dashboard
+en,dashboard,please move me to my dashboard page
+en,dashboard,move me to my dashboard page
+en,dashboard,please move me to my dashboard screen
+en,dashboard,move me to my dashboard screen
+en,dashboard,please show my dashboard
+en,dashboard,please show my dashboard screen
+en,dashboard,please show my dashboard page
+en,dashboard,please open my dashboard page
+en,dashboard,open my dashboard page
+en,dashboard,please open my dashboard screen
+en,dashboard,open my dashboard screen
+en,dashboard,please open my dashboard
+en,dashboard,open my dashboard
+en,dashboard,jump to my dashboard
+en,dashboard,please jump to my dashboard
+en,dashboard,jump to my dashboard page
+en,dashboard,jump to the my dashboard page
+en,dashboard,please jump to my dashboard page
+en,dashboard,jump to my dashboard screen
+en,dashboard,jump to the my dashboard screen
+en,dashboard,please jump to my dashboard screen
+en,dashboard,redirect to my dashboard
+en,dashboard,please redirect to my dashboard
+en,dashboard,redirect to my dashboard page
+en,dashboard,please redirect to my dashboard page
+en,dashboard,please redirect to my dashboard screen
+en,dashboard,redirect to my dashboard screen
+en,dashboard,display my dashboard
+en,dashboard,please display my dashboard
+en,dashboard,display my dashboard page
+en,dashboard,please display my dashboard page
+en,dashboard,display my dashboard screen
+en,dashboard,please display my dashboard screen
+en,dashboard,let's go to my dashboard
+en,dashboard,let's go to my dashboard page
+en,dashboard,let's go to my dashboard screen
+en,dashboard,take me into my dashboard
+en,dashboard,please take me into my dashboard
+en,dashboard,take me into my dashboard screen
+en,dashboard,please take me into my dashboard screen
+en,dashboard,take me into my dashboard page
+en,dashboard,please take me into my dashboard page
+en,dashboard,check my dashboard
+en,dashboard,please check my dashboard
+en,dashboard,check my dashboard page
+en,dashboard,please check my dashboard page
+en,dashboard,check my dashboard screen
+en,dashboard,please check my dashboard screen
+en,dashboard,dashboard page
+en,dashboard,my dashboard screen
+en,dashboard,my dashboard page
+en,dashboard,go dashboard screen
+en,dashboard,go dashboard page
+en,dashboard,go dashboard
+en,dashboard,view dashboard screen
+en,dashboard,view dashboard page
+en,dashboard,view dashboard
+en,dashboard,open dashboard screen
+en,dashboard,open dashboard page
+en,dashboard,open dashboard
+en,dashboard,show dashboard screen
+en,dashboard,show dashboard page
+en,dashboard,go to default
+en,dashboard,go to default page
+en,dashboard,go to my default page
+en,dashboard,go to default screen
+en,dashboard,show my default
+en,dashboard,show my default page
+en,dashboard,show my default screen
+en,dashboard,please go to default
+en,dashboard,please go to my default
+en,dashboard,please go to default page
+en,dashboard,please go to my default page
+en,dashboard,please go to default screen
+en,dashboard,default
+en,dashboard,please show default screen
+en,dashboard,please show default page
+en,dashboard,my default
+en,dashboard,default screen
+en,dashboard,show default
+en,dashboard,display default
+en,dashboard,display default screen
+en,dashboard,go to my default
+en,dashboard,please go to my default screen
+en,dashboard,go to my default screen
+en,dashboard,please take me to my default
+en,dashboard,take me to my default
+en,dashboard,please take me to my default screen
+en,dashboard,take me to my default screen
+en,dashboard,please take me to my default page
+en,dashboard,take me to my default page
+en,dashboard,please move to my default
+en,dashboard,move to my default
+en,dashboard,please move to my default page
+en,dashboard,move to my default page
+en,dashboard,please move to my default screen
+en,dashboard,move to my default screen
+en,dashboard,please show me my default
+en,dashboard,show me my default
+en,dashboard,please show me my default page
+en,dashboard,show me my default page
+en,dashboard,please show me my default screen
+en,dashboard,show me my default screen
+en,dashboard,please go to the default
+en,dashboard,go to the default
+en,dashboard,please go to the default page
+en,dashboard,go to the default page
+en,dashboard,please go to the default screen
+en,dashboard,go to the default screen
+en,dashboard,please take me to the default
+en,dashboard,take me to the default
+en,dashboard,please take me to default
+en,dashboard,take me to default
+en,dashboard,please take me to default screen
+en,dashboard,take me to default screen
+en,dashboard,please take me to the default screen
+en,dashboard,take me to the default screen
+en,dashboard,please take me to default page
+en,dashboard,take me to default page
+en,dashboard,please take me to the default page
+en,dashboard,take me to the default page
+en,dashboard,please move to default
+en,dashboard,move to default
+en,dashboard,please move to default page
+en,dashboard,move to default page
+en,dashboard,please move to the default page
+en,dashboard,move to the default page
+en,dashboard,please move to default screen
+en,dashboard,move to default screen
+en,dashboard,please move to the default screen
+en,dashboard,move to the default screen
+en,dashboard,please show me default
+en,dashboard,show me default
+en,dashboard,please show me the default
+en,dashboard,show me the default
+en,dashboard,please show me default page
+en,dashboard,show me default page
+en,dashboard,please show me the default page
+en,dashboard,show me the default page
+en,dashboard,please show me default screen
+en,dashboard,please show me the default screen
+en,dashboard,show me the default screen
+en,dashboard,please move me to default
+en,dashboard,move me to default
+en,dashboard,please move me to the default
+en,dashboard,move me to the default
+en,dashboard,please move me to default page
+en,dashboard,move me to default page
+en,dashboard,please move me to the default page
+en,dashboard,move me to the default page
+en,dashboard,please move me to default screen
+en,dashboard,move me to default screen
+en,dashboard,please move me to the default screen
+en,dashboard,move me to the default screen
+en,dashboard,show the default
+en,dashboard,show the default screen
+en,dashboard,show the default page
+en,dashboard,please show the default
+en,dashboard,please show the default screen
+en,dashboard,please show the default page
+en,dashboard,please open the default page
+en,dashboard,open the default page
+en,dashboard,please open the default screen
+en,dashboard,open the default screen
+en,dashboard,please open the default
+en,dashboard,open the default
+en,dashboard,jump to default
+en,dashboard,please jump to default
+en,dashboard,jump to the default
+en,dashboard,please jump to the default
+en,dashboard,jump to default page
+en,dashboard,please jump to default page
+en,dashboard,jump to the default page
+en,dashboard,please jump to the default page
+en,dashboard,jump to default screen
+en,dashboard,please jump to default screen
+en,dashboard,jump to the default screen
+en,dashboard,please jump to the default screen
+en,dashboard,redirect to default
+en,dashboard,please redirect to default
+en,dashboard,redirect to the default
+en,dashboard,please redirect to the default
+en,dashboard,redirect to default page
+en,dashboard,please redirect to default page
+en,dashboard,redirect to the default page
+en,dashboard,please redirect to the default page
+en,dashboard,redirect to default screen
+en,dashboard,please redirect to default screen
+en,dashboard,redirect to the default screen
+en,dashboard,display the default
+en,dashboard,please display the default
+en,dashboard,display the default page
+en,dashboard,please display the default page
+en,dashboard,display the default screen
+en,dashboard,please display the default screen
+en,dashboard,let's go to default
+en,dashboard,let's go to the default
+en,dashboard,let's go to default page
+en,dashboard,let's go to the default page
+en,dashboard,let's go to default screen
+en,dashboard,let's go to the default screen
+en,dashboard,take me into default
+en,dashboard,please take me into default
+en,dashboard,take me into the default
+en,dashboard,please take me into the default
+en,dashboard,take me into default screen
+en,dashboard,please take me into default screen
+en,dashboard,take me into the default screen
+en,dashboard,please take me into the default screen
+en,dashboard,take me into default page
+en,dashboard,please take me into default page
+en,dashboard,take me into the default page
+en,dashboard,please take me into the default page
+en,dashboard,check default
+en,dashboard,please check default
+en,dashboard,check the default
+en,dashboard,please check the default
+en,dashboard,check default page
+en,dashboard,please check default page
+en,dashboard,check the default page
+en,dashboard,please check the default page
+en,dashboard,check default screen
+en,dashboard,please check default screen
+en,dashboard,check the default screen
+en,dashboard,please check the default screen
+en,dashboard,please move me to my default
+en,dashboard,move me to my default
+en,dashboard,please move me to my default page
+en,dashboard,move me to my default page
+en,dashboard,please move me to my default screen
+en,dashboard,move me to my default screen
+en,dashboard,please show my default
+en,dashboard,please show my default screen
+en,dashboard,please show my default page
+en,dashboard,please open my default page
+en,dashboard,open my default page
+en,dashboard,please open my default screen
+en,dashboard,open my default screen
+en,dashboard,please open my default
+en,dashboard,open my default
+en,dashboard,jump to my default
+en,dashboard,please jump to my default
+en,dashboard,jump to my default page
+en,dashboard,jump to the my default page
+en,dashboard,please jump to my default page
+en,dashboard,jump to my default screen
+en,dashboard,jump to the my default screen
+en,dashboard,please jump to my default screen
+en,dashboard,redirect to my default
+en,dashboard,please redirect to my default
+en,dashboard,redirect to my default page
+en,dashboard,please redirect to my default page
+en,dashboard,please redirect to my default screen
+en,dashboard,redirect to my default screen
+en,dashboard,display my default
+en,dashboard,please display my default
+en,dashboard,display my default page
+en,dashboard,please display my default page
+en,dashboard,display my default screen
+en,dashboard,please display my default screen
+en,dashboard,let's go to my default
+en,dashboard,let's go to my default page
+en,dashboard,let's go to my default screen
+en,dashboard,take me into my default
+en,dashboard,please take me into my default
+en,dashboard,take me into my default screen
+en,dashboard,please take me into my default screen
+en,dashboard,take me into my default page
+en,dashboard,please take me into my default page
+en,dashboard,check my default
+en,dashboard,please check my default
+en,dashboard,check my default page
+en,dashboard,please check my default page
+en,dashboard,check my default screen
+en,dashboard,please check my default screen
+en,dashboard,default page
+en,dashboard,my default screen
+en,dashboard,my default page
+en,dashboard,go default screen
+en,dashboard,go default page
+en,dashboard,go default
+en,dashboard,view default screen
+en,dashboard,view default page
+en,dashboard,view default
+en,dashboard,open default screen
+en,dashboard,open default page
+en,dashboard,open default
+en,dashboard,show default screen
+en,dashboard,show default page
+en,dashboard,go to home
+en,dashboard,go to home page
+en,dashboard,go to my home page
+en,dashboard,go to home screen
+en,dashboard,show my home
+en,dashboard,show my home page
+en,dashboard,show my home screen
+en,dashboard,please go to home
+en,dashboard,please go to my home
+en,dashboard,please go to home page
+en,dashboard,please go to my home page
+en,dashboard,please go to home screen
+en,dashboard,home
+en,dashboard,please show home screen
+en,dashboard,please show home page
+en,dashboard,my home
+en,dashboard,home screen
+en,dashboard,show home
+en,dashboard,display home
+en,dashboard,display home screen
+en,dashboard,go to my home
+en,dashboard,please go to my home screen
+en,dashboard,go to my home screen
+en,dashboard,please take me to my home
+en,dashboard,take me to my home
+en,dashboard,please take me to my home screen
+en,dashboard,take me to my home screen
+en,dashboard,please take me to my home page
+en,dashboard,take me to my home page
+en,dashboard,please move to my home
+en,dashboard,move to my home
+en,dashboard,please move to my home page
+en,dashboard,move to my home page
+en,dashboard,please move to my home screen
+en,dashboard,move to my home screen
+en,dashboard,please show me my home
+en,dashboard,show me my home
+en,dashboard,please show me my home page
+en,dashboard,show me my home page
+en,dashboard,please show me my home screen
+en,dashboard,show me my home screen
+en,dashboard,please go to the home
+en,dashboard,go to the home
+en,dashboard,please go to the home page
+en,dashboard,go to the home page
+en,dashboard,please go to the home screen
+en,dashboard,go to the home screen
+en,dashboard,please take me to the home
+en,dashboard,take me to the home
+en,dashboard,please take me to home
+en,dashboard,take me to home
+en,dashboard,please take me to home screen
+en,dashboard,take me to home screen
+en,dashboard,please take me to the home screen
+en,dashboard,take me to the home screen
+en,dashboard,please take me to home page
+en,dashboard,take me to home page
+en,dashboard,please take me to the home page
+en,dashboard,take me to the home page
+en,dashboard,please move to home
+en,dashboard,move to home
+en,dashboard,please move to home page
+en,dashboard,move to home page
+en,dashboard,please move to the home page
+en,dashboard,move to the home page
+en,dashboard,please move to home screen
+en,dashboard,move to home screen
+en,dashboard,please move to the home screen
+en,dashboard,move to the home screen
+en,dashboard,please show me home
+en,dashboard,show me home
+en,dashboard,please show me the home
+en,dashboard,show me the home
+en,dashboard,please show me home page
+en,dashboard,show me home page
+en,dashboard,please show me the home page
+en,dashboard,show me the home page
+en,dashboard,please show me home screen
+en,dashboard,please show me the home screen
+en,dashboard,show me the home screen
+en,dashboard,please move me to home
+en,dashboard,move me to home
+en,dashboard,please move me to the home
+en,dashboard,move me to the home
+en,dashboard,please move me to home page
+en,dashboard,move me to home page
+en,dashboard,please move me to the home page
+en,dashboard,move me to the home page
+en,dashboard,please move me to home screen
+en,dashboard,move me to home screen
+en,dashboard,please move me to the home screen
+en,dashboard,move me to the home screen
+en,dashboard,show the home
+en,dashboard,show the home screen
+en,dashboard,show the home page
+en,dashboard,please show the home
+en,dashboard,please show the home screen
+en,dashboard,please show the home page
+en,dashboard,please open the home page
+en,dashboard,open the home page
+en,dashboard,please open the home screen
+en,dashboard,open the home screen
+en,dashboard,please open the home
+en,dashboard,open the home
+en,dashboard,jump to home
+en,dashboard,please jump to home
+en,dashboard,jump to the home
+en,dashboard,please jump to the home
+en,dashboard,jump to home page
+en,dashboard,please jump to home page
+en,dashboard,jump to the home page
+en,dashboard,please jump to the home page
+en,dashboard,jump to home screen
+en,dashboard,please jump to home screen
+en,dashboard,jump to the home screen
+en,dashboard,please jump to the home screen
+en,dashboard,redirect to home
+en,dashboard,please redirect to home
+en,dashboard,redirect to the home
+en,dashboard,please redirect to the home
+en,dashboard,redirect to home page
+en,dashboard,please redirect to home page
+en,dashboard,redirect to the home page
+en,dashboard,please redirect to the home page
+en,dashboard,redirect to home screen
+en,dashboard,please redirect to home screen
+en,dashboard,redirect to the home screen
+en,dashboard,display the home
+en,dashboard,please display the home
+en,dashboard,display the home page
+en,dashboard,please display the home page
+en,dashboard,display the home screen
+en,dashboard,please display the home screen
+en,dashboard,let's go to home
+en,dashboard,let's go to the home
+en,dashboard,let's go to home page
+en,dashboard,let's go to the home page
+en,dashboard,let's go to home screen
+en,dashboard,let's go to the home screen
+en,dashboard,take me into home
+en,dashboard,please take me into home
+en,dashboard,take me into the home
+en,dashboard,please take me into the home
+en,dashboard,take me into home screen
+en,dashboard,please take me into home screen
+en,dashboard,take me into the home screen
+en,dashboard,please take me into the home screen
+en,dashboard,take me into home page
+en,dashboard,please take me into home page
+en,dashboard,take me into the home page
+en,dashboard,please take me into the home page
+en,dashboard,check home
+en,dashboard,please check home
+en,dashboard,check the home
+en,dashboard,please check the home
+en,dashboard,check home page
+en,dashboard,please check home page
+en,dashboard,check the home page
+en,dashboard,please check the home page
+en,dashboard,check home screen
+en,dashboard,please check home screen
+en,dashboard,check the home screen
+en,dashboard,please check the home screen
+en,dashboard,please move me to my home
+en,dashboard,move me to my home
+en,dashboard,please move me to my home page
+en,dashboard,move me to my home page
+en,dashboard,please move me to my home screen
+en,dashboard,move me to my home screen
+en,dashboard,please show my home
+en,dashboard,please show my home screen
+en,dashboard,please show my home page
+en,dashboard,please open my home page
+en,dashboard,open my home page
+en,dashboard,please open my home screen
+en,dashboard,open my home screen
+en,dashboard,please open my home
+en,dashboard,open my home
+en,dashboard,jump to my home
+en,dashboard,please jump to my home
+en,dashboard,jump to my home page
+en,dashboard,jump to the my home page
+en,dashboard,please jump to my home page
+en,dashboard,jump to my home screen
+en,dashboard,jump to the my home screen
+en,dashboard,please jump to my home screen
+en,dashboard,redirect to my home
+en,dashboard,please redirect to my home
+en,dashboard,redirect to my home page
+en,dashboard,please redirect to my home page
+en,dashboard,please redirect to my home screen
+en,dashboard,redirect to my home screen
+en,dashboard,display my home
+en,dashboard,please display my home
+en,dashboard,display my home page
+en,dashboard,please display my home page
+en,dashboard,display my home screen
+en,dashboard,please display my home screen
+en,dashboard,let's go to my home
+en,dashboard,let's go to my home page
+en,dashboard,let's go to my home screen
+en,dashboard,take me into my home
+en,dashboard,please take me into my home
+en,dashboard,take me into my home screen
+en,dashboard,please take me into my home screen
+en,dashboard,take me into my home page
+en,dashboard,please take me into my home page
+en,dashboard,check my home
+en,dashboard,please check my home
+en,dashboard,check my home page
+en,dashboard,please check my home page
+en,dashboard,check my home screen
+en,dashboard,please check my home screen
+en,dashboard,home page
+en,dashboard,my home screen
+en,dashboard,my home page
+en,dashboard,go home screen
+en,dashboard,go home page
+en,dashboard,go home
+en,dashboard,view home screen
+en,dashboard,view home page
+en,dashboard,view home
+en,dashboard,open home screen
+en,dashboard,open home page
+en,dashboard,open home
+en,dashboard,show home screen
+en,dashboard,show home page
+en,dashboard,switch to home page
+en,dashboard,switch to home page screen
+en,dashboard,please switch to home page
+en,dashboard,please switch to home page screen
+en,dashboard,switch to dashboard
+en,dashboard,switch to dashboard page
+en,dashboard,switch to dashboard screen
+en,dashboard,please switch to dashboard page
+en,dashboard,please switch to dashboard page screen
