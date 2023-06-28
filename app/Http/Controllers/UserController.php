@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\UserDeleteEvent;
 use Carbon\Carbon;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -226,6 +227,24 @@ class UserController extends Controller
             ]);
         } catch (\Exception $e) {
             $this->setResponse(true, "invalid token or user not found.");
+            return response()->json($this->_response, 500);
+        }
+    }
+
+    public function deleteUser()
+    {
+        $email = auth()->user()->email;
+
+        try {
+            $user = User::whereEmail($email)->first();
+            event(new UserDeleteEvent($user));
+
+            \Log::debug($user->email . 'deleted him self');
+
+            $this->setResponse(false, "User Deleted successfully.");
+            return response()->json($this->_response, 200);
+        } catch (\Exception $e) {
+            $this->setResponse(true, $e->getMessage());
             return response()->json($this->_response, 500);
         }
     }

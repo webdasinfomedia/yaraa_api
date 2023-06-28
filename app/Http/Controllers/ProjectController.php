@@ -181,7 +181,7 @@ class ProjectController extends Controller
 
     public function update(Request $request)
     {
-        $validator = Validator::make($request->all(), [
+        $rules = [
             "id" => "required",
             // "name" => "required|regex:/^[\pL\pN\s\-\_\,\?\&\.\(\)\#\@']+$/u|max:100",
             "name" => "required|max:100",
@@ -197,8 +197,13 @@ class ProjectController extends Controller
             "milestones" => "filled|json",
             "tags" => "filled",
             "due_date" => "filled|date",
-            "customer_id" => "nullable|exists:users,_id,role_id," . getRoleBySlug('customer')->id,
-        ]);
+        ];
+
+        if ($request->customer_id) {
+            $rules["customer_id"] = "nullable|exists:users,_id,role_id," . getRoleBySlug('customer')->id;
+        }
+
+        $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             $this->setResponse(true, $validator->errors()->all());
