@@ -44,7 +44,7 @@ class OrganizationResource extends JsonResource
                 "on-time" => $task->where('due_date', '>', $today)->count(),
                 "delayed" => $task->where('due_date', '<', $today)->count(),
             ],
-            "milestone" => [ 
+            "milestone" => [
                 "total_milestone" => $milestone->count(),
                 "completed_milestone" => $milestone->where('status', 'completed')->count(),
                 "active_milestone" => $milestone->where('status', '!=', 'completed')->count(),
@@ -52,10 +52,10 @@ class OrganizationResource extends JsonResource
                 "delayed" => $milestone->where('due_date', '<', $today)->count(),
             ],
             "employee_attendance" => [
-                "total_employee" => User::where('role_id', $employeeRole->id)->get()->count(),
+                "total_employee" => $employeeRole ? User::where('role_id', $employeeRole->id)->get()->count() : 0,
                 "present_employee" => PunchDetail::whereBetween('created_at', [$dt, $edt])->get()->count(),
             ],
-            "top_performance" =>new TopPerformanceResource(auth()->user()),
+            "top_performance" => new TopPerformanceResource(auth()->user()),
         ];
     }
 }
