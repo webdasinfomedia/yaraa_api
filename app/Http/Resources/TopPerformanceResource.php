@@ -20,8 +20,6 @@ class TopPerformanceResource extends JsonResource
         $validator = Validator::make($request->all(), [
             'type' => 'required|in:all,project,unassigned',
             'project_id' => 'required_if:type,project|exists:projects,_id',
-            'start_date' => 'date',
-            'end_date' => 'date'
         ]);
 
         if ($validator->fails()) {
@@ -37,14 +35,6 @@ class TopPerformanceResource extends JsonResource
 
                 foreach ($members as $member) {
                     $totalTasks = $member->projectTasks();
-
-                    if ($request->has('start_date') && $request->start_date != null) {
-                        $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
-                    }
-
-                    if ($request->has('end_date') && $request->end_date != null) {
-                        $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
-                    }
 
                     $data[] = [
                         "name" => $member->name,
@@ -62,14 +52,6 @@ class TopPerformanceResource extends JsonResource
                 foreach ($projectMembers as $member) {
                     $totalTasks = $project->tasks()->where('assignee', $member->id);
 
-                    if ($request->has('start_date') && $request->start_date != null) {
-                        $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
-                    }
-
-                    if ($request->has('end_date') && $request->end_date != null) {
-                        $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
-                    }
-
                     $data[] = [
                         "name" => $member->name,
                         "email" => $member->email,
@@ -84,14 +66,6 @@ class TopPerformanceResource extends JsonResource
 
                 foreach ($members as $member) {
                     $totalTasks = $member->nonProjectTasks();
-
-                    if ($request->has('start_date') && $request->start_date != null) {
-                        $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
-                    }
-
-                    if ($request->has('end_date') && $request->end_date != null) {
-                        $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
-                    }
 
                     $data[] = [
                         "name" => $member->name,
