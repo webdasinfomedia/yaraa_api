@@ -216,7 +216,7 @@
                                                         <h2 style="font-family: Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-weight: 500;font-size: 20px;color: #4F545C;letter-spacing: 0.27px;">
                                                             Hey {{ $name }},</h2>
                                                         <p>Thank you for signing up! We hope you have smooth onboarding experience, If you have any issue you can reach out to us. </p>
-                                                        <p>Support Email : <a href="mailto:sales@nifysol.com">sales@nifysol.com</a></p>
+                                                        <p>Support Email : <a href="mailto:yaraa.bizsuite@gmail.com">yaraa.bizsuite@gmail.com</a></p>
                                                         <p>Skype: <a href="skype:dasinfo1?chat">dasinfo1</a></p>
 
                                                     </div>

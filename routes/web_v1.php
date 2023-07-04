@@ -98,6 +98,7 @@ $router->group(['prefix' => 'api'], function ($router) {
     $router->post('app-sumo-onboarding', 'AppSumoSignupController@signup');
     $router->post('pitchground-onboarding', 'PitchGroundSignupController@signup');
     $router->post('dealfuel-onboarding', 'DealFuelSignupController@signup');
+    $router->post('stpi-onboarding', 'StpiSignupController@signup');
     $router->post('plan-updated', 'PlanController@planUpdated');
 
     $router->group(['middleware' => 'auth'], function ($router) {
