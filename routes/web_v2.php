@@ -16,7 +16,7 @@
 $router->group(['prefix' => 'api/v2', 'namespace' => 'V2'], function ($router) {
     $router->group(['middleware' => 'auth'], function ($router) {
         $router->group(["prefix" => "user"], function ($router) {
-            $router->post('dashboard', 'UserController@index');
+            $router->get('dashboard', 'UserController@index');
         });
     });
 });
