@@ -17,7 +17,7 @@ class TopPerformanceResource extends JsonResource
         return [
             "name" => $this->name,
             "email" => $this->email,
-            "total_tasks" => $this->count(),
+            "total_tasks" => $this->projectTasks()->count(),
             "total_completed_task" => $this->where('status', 'completed')->count()
         ];
     }
