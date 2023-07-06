@@ -28,6 +28,10 @@ class OrganizationResource extends JsonResource
         $dt = Carbon::now()->startOfDay();
         $edt = Carbon::now()->endOfDay();
         $employeeRole = getRoleBySlug('employee');
+        $adminRole = getRoleBySlug('admin');
+        $members = User::all();
+        $employeeRoleId = $employeeRole ? $employeeRole->id : 0;
+        $adminRoleId = $adminRole ? $adminRole->id : 0;
 
         return [
             "project" => [
@@ -52,10 +56,10 @@ class OrganizationResource extends JsonResource
                 "delayed" => $milestone->where('due_date', '<', $today)->count(),
             ],
             "employee_attendance" => [
-                "total_employee" => $employeeRole ? User::where('role_id', $employeeRole->id)->get()->count() : 0,
+                "total_employee" => User::whereIn('role_id', [$employeeRoleId, $adminRoleId])->get()->count(),
                 "present_employee" => PunchDetail::whereBetween('created_at', [$dt, $edt])->get()->count(),
             ],
-            "top_performance" => new TopPerformanceResource(auth()->user()),
+            "top_performance" => TopPerformanceResource::collection($members),
         ];
     }
 }
