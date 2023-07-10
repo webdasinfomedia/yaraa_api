@@ -35,14 +35,14 @@ class OrganizationResource extends JsonResource
 
         return [
             "project" => [
-                "current_projects" => $project->count(),
+                "total_projects" => $project->count(),
                 "completed_projects" => $project->where('status', 'completed')->count(),
                 "ongoing_projects" => $project->where('status', '!=', 'completed')->count(),
                 "on-time" => $project->where('due_date', '>', $today)->count(),
                 "delayed" => $project->where('due_date', '<', $today)->count(),
             ],
             "task" => [
-                "current_task" => $task->count(),
+                "total_task" => $task->count(),
                 "completed_task" => $task->where('status', 'completed')->count(),
                 "active_task" => $task->where('status', '!=', 'completed')->count(),
                 "on-time" => $task->where('due_date', '>', $today)->count(),
