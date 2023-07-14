@@ -32,7 +32,7 @@ class ReportsController extends Controller
         try {
 
             if ($request->type == 'all') {
-                $users = User::whereHas('role', function (Builder $query) {
+                $members = User::whereHas('role', function (Builder $query) {
                     $query->where('slug', 'employee')->orWhere('slug', 'admin');
                 })->get();
 
