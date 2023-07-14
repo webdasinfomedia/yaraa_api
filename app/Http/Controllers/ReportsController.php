@@ -11,6 +11,7 @@ use App\Http\Resources\UserBasicResource;
 use App\Models\PunchDetail;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
+use Jenssegers\Mongodb\Eloquent\Builder;
 
 class ReportsController extends Controller
 {
@@ -31,7 +32,9 @@ class ReportsController extends Controller
         try {
 
             if ($request->type == 'all') {
-                $members = User::all();
+                $users = User::whereHas('role', function (Builder $query) {
+                    $query->where('slug', 'employee')->orWhere('slug', 'admin');
+                })->get();
 
                 foreach ($members as $member) {
                     $totalTasks = $member->projectTasks();
