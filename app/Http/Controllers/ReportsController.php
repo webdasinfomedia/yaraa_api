@@ -40,15 +40,15 @@ class ReportsController extends Controller
                     $totalTasks = $member->projectTasks();
                     // $totalCompletedTasks = $member->projectTasks();
 
-                    if ($request->has('start_date') && $request->start_date != null) {
-                        $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
-                        // $totalCompletedTasks = $totalCompletedTasks->where('start_date', '>=', $request->start_date);
-                    }
+                    // if ($request->has('start_date') && $request->start_date != null) {
+                    //     $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
+                    //     // $totalCompletedTasks = $totalCompletedTasks->where('start_date', '>=', $request->start_date);
+                    // }
 
-                    if ($request->has('end_date') && $request->end_date != null) {
-                        $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
-                        // $totalCompletedTasks = $totalCompletedTasks->where('end_date', '<=', $request->end_date);
-                    }
+                    // if ($request->has('end_date') && $request->end_date != null) {
+                    //     $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
+                    //     // $totalCompletedTasks = $totalCompletedTasks->where('end_date', '<=', $request->end_date);
+                    // }
 
                     $data[] = [
                         "name" => $member->name,
@@ -63,20 +63,19 @@ class ReportsController extends Controller
             if ($request->type == 'project') {
                 $project = Project::find($request->project_id);
                 $projectMembers = $project->members;
-
                 foreach ($projectMembers as $member) {
                     $totalTasks = $project->tasks()->where('assignee', $member->id);
                     // $totalCompletedTasks = $project->tasks()->where('assignee', $member->id);
 
-                    if ($request->has('start_date') && $request->start_date != null) {
-                        $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
-                        // $totalCompletedTasks = $totalCompletedTasks->where('start_date', '>=', $request->start_date);
-                    }
+                    // if ($request->has('start_date') && $request->start_date != null) {
+                    //     $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
+                    //     // $totalCompletedTasks = $totalCompletedTasks->where('start_date', '>=', $request->start_date);
+                    // }
 
-                    if ($request->has('end_date') && $request->end_date != null) {
-                        $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
-                        // $totalCompletedTasks = $totalCompletedTasks->where('end_date', '<=', $request->end_date);
-                    }
+                    // if ($request->has('end_date') && $request->end_date != null) {
+                    //     $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
+                    //     // $totalCompletedTasks = $totalCompletedTasks->where('end_date', '<=', $request->end_date);
+                    // }
 
                     $data[] = [
                         "name" => $member->name,
@@ -95,15 +94,15 @@ class ReportsController extends Controller
                     $totalTasks = $member->nonProjectTasks();
                     // $totalCompletedTasks = $member->nonProjectTasks();
 
-                    if ($request->has('start_date') && $request->start_date != null) {
-                        $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
-                        // $totalCompletedTasks = $totalCompletedTasks->where('start_date', '>=', $request->start_date);
-                    }
+                    // if ($request->has('start_date') && $request->start_date != null) {
+                    //     $totalTasks = $totalTasks->where('start_date', '>=', $request->start_date);
+                    //     // $totalCompletedTasks = $totalCompletedTasks->where('start_date', '>=', $request->start_date);
+                    // }
 
-                    if ($request->has('end_date') && $request->end_date != null) {
-                        $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
-                        // $totalCompletedTasks = $totalCompletedTasks->where('end_date', '<=', $request->end_date);
-                    }
+                    // if ($request->has('end_date') && $request->end_date != null) {
+                    //     $totalTasks = $totalTasks->where('end_date', '<=', $request->end_date);
+                    //     // $totalCompletedTasks = $totalCompletedTasks->where('end_date', '<=', $request->end_date);
+                    // }
 
                     $data[] = [
                         "name" => $member->name,
