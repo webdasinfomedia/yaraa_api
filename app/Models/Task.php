@@ -113,9 +113,13 @@ class Task extends Model
         return $this->hasMany(TaskComment::class);
     }
 
-    public function details()
+    public function details($userId = null)
     {
-        return $this->hasMany(TaskDetail::class);
+        if ($userId == null) {
+            return $this->hasMany(TaskDetail::class);
+        } else {
+            return $this->hasMany(TaskDetail::class)->where('user_id', $userId);
+        }
     }
 
     public function myDetails()

@@ -28,12 +28,12 @@ trait TaskActivity
      */
     public function start()
     {
-        if($this->isStarted()){
+        if ($this->isStarted()) {
             throw new TaskActivityException('Task Already Started.');
         }
 
         $this->markAsStart();
-        
+
         $taskDetails = $this->myDetails()->create([
             "user_id" => auth()->id(),
             "start_date" => new DateTime(),
@@ -47,8 +47,7 @@ trait TaskActivity
         ]);
 
         /** TaskActivityLog Trait on Task Model ****/
-        $this->createMessageActivity('resume'); 
-
+        $this->createMessageActivity('resume');
     }
 
     /**
@@ -58,12 +57,12 @@ trait TaskActivity
      */
     public function complete()
     {
-        if( ! $this->isStarted()){
+        if (!$this->isStarted()) {
             throw new TaskActivityException('Please Start The Task First.');
         }
 
         $this->pause();
-        
+
         $this->myDetails->markAsComplete();
     }
 
@@ -74,18 +73,17 @@ trait TaskActivity
      */
     public function pause()
     {
-        if( ! $this->isStarted()){
+        if (!$this->isStarted()) {
             throw new TaskActivityException('Please Start The Task First.');
         }
 
-        if( ! $this->isPaused())
-        {
-           $this->myDetails->dailyActivity->whereNotNull('resume_date')->whereNull('pause_date')->first()->update([
+        if (!$this->isPaused()) {
+            $this->myDetails->dailyActivity->whereNotNull('resume_date')->whereNull('pause_date')->first()->update([
                 "pause_date" => new DateTime(),
             ]);
 
             $this->details()->update(['status' => 'paused']);
-            
+
             /** TaskActivityLog Trait on Task Model ****/
             $this->createMessageActivity('pause');
         }
@@ -98,15 +96,15 @@ trait TaskActivity
      */
     public function resume()
     {
-        if(! $this->isStarted()){
+        if (!$this->isStarted()) {
             throw new TaskActivityException('Please Start The Task First.');
         }
 
-        if(! $this->isPaused()){
+        if (!$this->isPaused()) {
             throw new TaskActivityException('Task Already on Going.');
         }
 
-       $this->myDetails->dailyActivity()->create([
+        $this->myDetails->dailyActivity()->create([
             "resume_date" => new DateTime(),
             "pause_date" => null,
         ]);
@@ -135,8 +133,8 @@ trait TaskActivity
     public function isPaused()
     {
         return $this->myDetails->dailyActivity->whereNotNull('resume_date')->whereNull('pause_date')->count() > 0
-                ? false
-                : true;
+            ? false
+            : true;
     }
 
     /**
@@ -146,11 +144,11 @@ trait TaskActivity
      */
     public function getMyTotalWorkHours()
     {
-        if(! $this->myDetails()->exists()){
+        if (!$this->myDetails()->exists()) {
             return null;
         }
-        
-        $totalSeconds = $this->myDetails->dailyActivity->reduce(function($totalSeconds, $log) {
+
+        $totalSeconds = $this->myDetails->dailyActivity->reduce(function ($totalSeconds, $log) {
             return $totalSeconds + $log->resume_date->diffInSeconds($log->pause_date);
         });
 
@@ -161,8 +159,35 @@ trait TaskActivity
             "hours" => $totalTime->h,
             "minutes" => $totalTime->i,
             "seconds" => $totalTime->s,
-            "pretty_format" =>$totalTime->forHumans(true)
+            "pretty_format" => $totalTime->forHumans(true)
         ];
     }
 
+
+    /**
+     * get total work hours of the user
+     * 
+     * @return array
+     */
+    public function getTotalWorkHours($userId)
+    {
+        if (!$this->details($userId)->exists()) {
+            return null;
+        }
+
+        // dd($this->details($userId)->get());
+        $totalSeconds = $this->details($userId)->first()->dailyActivity->reduce(function ($totalSeconds, $log) {
+            return $totalSeconds + $log->resume_date->diffInSeconds($log->pause_date);
+        });
+
+        $totalTime = CarbonInterval::seconds($totalSeconds)->cascade();
+
+        return [
+            "days" => $totalTime->d,
+            "hours" => $totalTime->h,
+            "minutes" => $totalTime->i,
+            "seconds" => $totalTime->s,
+            "pretty_format" => $totalTime->forHumans(true)
+        ];
+    }
 }

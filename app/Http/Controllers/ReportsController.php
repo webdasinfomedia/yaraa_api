@@ -164,15 +164,15 @@ class ReportsController extends Controller
                         $endDate = Carbon::createFromFormat('Y-m-d', $request->end_date);
                         $endDate = $endDate->endOfDay();
 
-                        $tasks = $project->tasks()->whereBetween('due_date', [$startDate, $endDate])->where('assignee', $user->id)->get();
+                        $tasks = $project->tasks()->whereBetween('created_at', [$startDate, $endDate])->where('assignee', $user->id)->get();
                     } elseif ($request->has('start_date') && $request->start_date != null && !$request->has('end_date')) {
                         $startDate = Carbon::createFromFormat('Y-m-d', $request->start_date);
                         $startDate = $startDate->startOfDay();
-                        $tasks = $project->tasks()->where('due_date', '>=', $startDate)->where('assignee', $user->id)->get();
+                        $tasks = $project->tasks()->where('created_at', '>=', $startDate)->where('assignee', $user->id)->get();
                     } elseif (!$request->has('start_date') && $request->has('end_date') && $request->end_date != null) {
                         $endDate = Carbon::createFromFormat('Y-m-d', $request->end_date);
                         $endDate = $endDate->startOfDay();
-                        $tasks = $project->tasks()->where('due_date', '<=', $endDate)->where('assignee', $user->id)->get();
+                        $tasks = $project->tasks()->where('created_at', '<=', $endDate)->where('assignee', $user->id)->get();
                     } else {
                         $tasks = $project->tasks()->where('assignee', $user->id)->get();
                     }
@@ -184,7 +184,7 @@ class ReportsController extends Controller
                             'user_profile' => $user->image_48x48 ? url('storage/' . $user->image_48x48) : null,
                             "task" => $task->name,
                             "due_date" => $task->due_date,
-                            "my_total_work_hours" => $task->getMyTotalWorkHours(),
+                            "my_total_work_hours" => $task->getTotalWorkHours($user->id),
                             "progress_percent" => $task->getProgress()
                         ];
                     }
