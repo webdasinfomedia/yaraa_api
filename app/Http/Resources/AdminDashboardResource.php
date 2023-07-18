@@ -11,21 +11,20 @@ use App\Models\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class OrganizationResource extends JsonResource
+class AdminDashboardResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
-     *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @return array
      */
     public function toArray($request)
     {
         $today = Carbon::today()->toDateString();
-        $project = $this->getProjects('all');
-        $projectIds = $project->pluck('id');
-        $task = $this->getTasks('all');
-        $milestone = Milestone::whereIn('project_id', $projectIds)->get();
+        $project = Project::get();
+        $task = Task::get();
+        $milestone = Milestone::get();
         $dt = Carbon::now()->startOfDay();
         $edt = Carbon::now()->endOfDay();
         $employeeRole = getRoleBySlug('employee');
