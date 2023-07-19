@@ -33,6 +33,15 @@ class AdminDashboardResource extends JsonResource
         $adminRoleId = $adminRole ? $adminRole->id : 0;
         $employee = User::whereIn('role_id', [$employeeRoleId, $adminRoleId])->get();
 
+        $top_performance = $employee->sortByDesc(function ($employee) {
+            return $employee->projectTasks()->where('status', 'completed')->filter(function ($task) {
+                if (!is_null($task->end_date) && $task->end_date <= $task->due_date) {
+                    return true;
+                }
+                return false;
+            })->count();
+        })->take(5);
+
         return [
             "project" => [
                 "total_projects" => $project->count(),
@@ -59,7 +68,7 @@ class AdminDashboardResource extends JsonResource
                 "total_employee" => $employee->count(),
                 "present_employee" => PunchDetail::whereBetween('created_at', [$dt, $edt])->groupBy('user_id')->get()->count(),
             ],
-            "top_performance" => TopPerformanceResource::collection($employee)->sortByDesc('total_completed_task')->take(5),
+            "top_performance" => TopPerformanceResource::collection($top_performance),
         ];
     }
 }
