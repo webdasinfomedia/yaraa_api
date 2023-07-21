@@ -3,16 +3,18 @@
 namespace App\Http\Controllers\V2;
 
 use App\Models\Tenant;
-use Illuminate\Http\Request;
-use App\Http\Resources\tenantsResource;
+use App\Http\Resources\AdminResource;
 
 class TenantsController extends Controller
 {
     public function tenants()
     {
         try {
-            $tenants = Tenant::get();
-            return tenantsResource::collection($tenants)->additional(["error" => false, "message" => null]);
+            if (auth()->user()->isSuperAdmin()) {
+                $tenants = Tenant::get();
+                return AdminResource::collection($tenants)->additional(["error" => false, "message" => null]);
+            }
+            return "You dont have super admin access.";
         } catch (\Exception $e) {
             $this->setResponse(true, $e->getMessage());
             return response()->json($this->_response, 500);

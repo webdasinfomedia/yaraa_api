@@ -11,12 +11,14 @@ class UserController extends Controller
     {
         try {
 
-            if (auth()->user()->isAdmin()) {
-                $response = new AdminDashboardResource(auth()->user());
-            } else {
-                $response = new OrganizationResource(auth()->user());
-            }
-            return $response->additional(['error' => false, 'message' => null]);
+            // if (auth()->user()->isAdmin()) {
+            //     $response = new AdminDashboardResource(auth()->user());
+            // } else {
+            //     $response = new OrganizationResource(auth()->user());
+            // }
+            // return $response->additional(['error' => false, 'message' => null]);
+            return (new OrganizationResource(auth()->user()))->additional(['error' => false, 'message' => null]);
+
         } catch (\Exception $e) {
             $this->setResponse(true, $e->getMessage());
             return response()->json($this->_response, 500);
