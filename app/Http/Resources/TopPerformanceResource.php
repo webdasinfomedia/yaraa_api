@@ -21,7 +21,7 @@ class TopPerformanceResource extends JsonResource
             "email" => $this->email,
             "total_tasks" => $this->projectTasks()->count(),
             "total_completed_task" => $this->projectTasks()->where('status', 'completed')->count(),
-            "ontime_completed_task" => $task->where('status', 'completed')->filter(function ($task) {
+            "onTime_completed_task" => $task->where('status', 'completed')->filter(function ($task) {
                 if (!is_null($task->end_date) && $task->end_date <= $task->due_date) {
                     return true;
                 }
