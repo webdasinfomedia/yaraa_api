@@ -15,8 +15,10 @@ trait TaskActivityLog
     {
         $this->deleteTodaysPreviousActivity($type);
 
+        $totalWorkTime = $this->getMyTotalWorkHours();
+
         $this->comments()->create([
-            "message" => $type == 'resume' ? "Started working." : "Stopped working.",
+            "message" => $type == 'resume' ? "Started working." : "Stopped working. Worked for total - " . $totalWorkTime['pretty_format'] . " on date - " . $totalWorkTime['date'],
             "type" => $type,
         ]);
     }
@@ -29,12 +31,12 @@ trait TaskActivityLog
     private function deleteTodaysPreviousActivity($type)
     {
         $todayStart = new DateTime(date('Y-m-d'));
-        $todayEnd = new DateTime(date('Y-m-d').'+1 day');
+        $todayEnd = new DateTime(date('Y-m-d') . '+1 day');
 
         $this->comments()
-            ->where('created_by',auth()->id())
-            ->where('created_at', '>=' , $todayStart)
-            ->where('created_at', '<' , $todayEnd)
+            ->where('created_by', auth()->id())
+            ->where('created_at', '>=', $todayStart)
+            ->where('created_at', '<', $todayEnd)
             ->where('type', $type)
             ->delete();
     }
