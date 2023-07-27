@@ -154,7 +154,14 @@ trait TaskActivity
 
         $totalTime = CarbonInterval::seconds($totalSeconds)->cascade();
 
+        $pauseDate = $this->myDetails->dailyActivity->last()->pause_date;
+
+        if ($pauseDate) {
+            $pauseDate = date('d F Y', strtotime($pauseDate));
+        }
+
         return [
+            "date" => $pauseDate,
             "days" => $totalTime->d,
             "hours" => $totalTime->h,
             "minutes" => $totalTime->i,
