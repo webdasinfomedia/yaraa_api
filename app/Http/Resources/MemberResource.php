@@ -20,6 +20,7 @@ class MemberResource extends JsonResource
             "image" => url('storage/' . $this->image),
             "designation" => $this->designation,
             "is_disabled" => $this->trashed() ? true : false,
+            "role" => $this->role ?  $this->role->slug : null
         ];
 
         if (key_exists('projectRole', $this->resource->toArray())) {
