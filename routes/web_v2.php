@@ -12,12 +12,15 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
- 
+
 $router->group(['prefix' => 'api/v2', 'namespace' => 'V2'], function ($router) {
     $router->group(['middleware' => 'auth'], function ($router) {
         $router->group(["prefix" => "user"], function ($router) {
             $router->get('dashboard', 'UserController@index');
             $router->get('tenants', 'TenantsController@tenants');
+        });
+        $router->group(['prefix' => 'project'], function ($router) {
+            $router->post('list', 'AllProjectController@index');
         });
     });
 });
