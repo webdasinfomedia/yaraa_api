@@ -205,15 +205,6 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         return false;
     }
 
-    public function isSuperAdmin()
-    {
-        // if(isset($this->role_id)){
-        if ($this->role()->exists()) {
-            return $this->role->slug == 'super_admin' ? true : false;
-        }
-        return false;
-    }
-
     public function apps()
     {
         return $this->hasOne(UserApp::class);

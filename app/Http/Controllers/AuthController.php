@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Hash;
 use App\Http\Resources\UserResource;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Resources\UserBasicResource;
+use App\Http\Resources\AdminBasicResource;
 use App\Jobs\EnableAppJob;
 use App\Jobs\SyncZoomTokenAcrossTenantJob;
 use App\Jobs\UpdateUserFcmTokenJob;
@@ -24,6 +25,8 @@ use App\Models\Settings;
 use App\Models\Tenant;
 use App\Models\TenantSlaveUser;
 use App\Models\UserApp;
+use App\Models\SuperAdmin;
+use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Support\Facades\Crypt;
 use Illuminate\Support\Facades\Log;
 use Laravel\Socialite\Facades\Socialite;
@@ -141,26 +144,34 @@ class AuthController extends Controller
     {
         $credentials = request(['email', 'password']);
         try {
-            $tenant = Tenant::findTenant($credentials['email'])->configure()->use();
 
-            // if (!$token = auth()->setTTL(86400)->attempt($credentials)) {
-            // if (!$token = auth()->attempt($credentials)) {
+            $admin = SuperAdmin::where('email', $credentials['email'])->first();
 
-            if (!$token = JWTAuth::customClaims(['host' => $tenant->domain])->attempt($credentials)) {
-                $this->setResponse(true, 'Invalid credentials.');
-                return response()->json($this->_response, 401);
+            if ($admin && Hash::check($credentials['password'], $admin->password)) {
+                $token = Auth::guard('admin-api')->claims(['role' => 'super_admin'])->attempt($credentials);
+                auth()->login($admin);
+                return $this->adminWithToken($token);
+            } else {
+                $tenant = Tenant::findTenant($credentials['email'])->configure()->use();
+
+                // if (!$token = auth()->setTTL(86400)->attempt($credentials)) {
+                // if (!$token = auth()->attempt($credentials)) {
+
+                if (!$token = JWTAuth::customClaims(['host' => $tenant->domain])->attempt($credentials)) {
+                    $this->setResponse(true, 'Invalid credentials.');
+                    return response()->json($this->_response, 401);
+                }
+
+                if (!auth()->user()->is_verified) {
+                    return response()->json(['error' => true, 'message' => 'Your have not verified your email.Please verify your account from the invite email.'], 401);
+                }
+
+                //check if plan is cancelled on 3rd party provider e.g: AppSumo
+                if (!is_null(app('app')->tenant->cancelled_at) && app('app')->tenant->cancelled_at < Carbon::now()) {
+                    return response()->json(['error' => true, 'message' => 'Your account has been disabled.'], 401);
+                }
+                return $this->respondWithToken($token);
             }
-
-            if (!auth()->user()->is_verified) {
-                return response()->json(['error' => true, 'message' => 'Your have not verified your email.Please verify your account from the invite email.'], 401);
-            }
-
-            //check if plan is cancelled on 3rd party provider e.g: AppSumo
-            if (!is_null(app('app')->tenant->cancelled_at) && app('app')->tenant->cancelled_at < Carbon::now()) {
-                return response()->json(['error' => true, 'message' => 'Your account has been disabled.'], 401);
-            }
-
-            return $this->respondWithToken($token);
         } catch (\Exception $e) {
             return response()->json([
                 "error" => true,
@@ -436,4 +447,27 @@ class AuthController extends Controller
 
     //     dd($token);
     // }
+
+    protected function adminWithToken($token)
+    {
+        $user = Auth::user();
+        // dd($user);
+        if (request()->has('timezone')) {
+            $user->timezone = isValidTimezone(request()->get('timezone')) ? request()->get('timezone') : 'Asia/Kolkata';
+        } else {
+            $user->timezone = 'Asia/Kolkata';
+        }
+
+        $user->save();
+
+        return response()->json([
+            // 'user' => $user,
+            'access_token' => $token,
+            'token_type' => 'bearer',
+            'expires_in' => intval(auth()->factory()->getTTL()),
+            'data' => new AdminBasicResource(auth()->user()),
+            'error' => false,
+            'message' => $this->_successMessage,
+        ]);
+    }
 }

@@ -17,10 +17,16 @@ $router->group(['prefix' => 'api/v2', 'namespace' => 'V2'], function ($router) {
     $router->group(['middleware' => 'auth'], function ($router) {
         $router->group(["prefix" => "user"], function ($router) {
             $router->get('dashboard', 'UserController@index');
-            $router->get('tenants', 'TenantsController@tenants');
         });
         $router->group(['prefix' => 'project'], function ($router) {
             $router->post('list', 'AllProjectController@index');
         });
     });
+
+    $router->group(['middleware' => 'auth:admin-api'], function ($router) {
+        $router->group(['prefix' => 'super/admin'], function ($router) {
+            $router->get('tenants', 'TenantsController@tenants');
+        });
+    });
+
 });

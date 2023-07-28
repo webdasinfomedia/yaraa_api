@@ -37,13 +37,6 @@ class RolesSeed extends Seeder
                 'permission' => null,
                 'is_Admin' => false,
             ]);
-
-            \App\Models\Role::create([
-                'name' => 'SuperAdmin',
-                'slug' => 'superAdmin',
-                'permission' => null,
-                'is_Admin' => false,
-            ]);
         }
     }
 }
