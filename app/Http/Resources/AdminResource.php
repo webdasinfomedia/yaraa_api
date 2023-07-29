@@ -30,7 +30,7 @@ class AdminResource extends JsonResource
             ];
             $plan = Http::withOptions(["verify" => false])->post($url, $params)->throw()->json();
         } else {
-            $plan = "No plan found"; 
+            $plan = null; 
         }
 
         return [
