@@ -312,6 +312,8 @@ class AuthController extends Controller
             "code" => "required"
         ]);
 
+        return response()->json(['ok'], 200);
+        exit;
         if ($validator->fails()) {
             $this->setResponse(true, $validator->errors()->all());
             return response()->json($this->_response, 400);
@@ -319,7 +321,7 @@ class AuthController extends Controller
 
         try {
             // $providerUser = Socialite::driver('linkedin')->stateless()->scopes(['email', 'profile', 'openid'])->user();
-            $providerUser = Socialite::driver('linkedin')->scopes(['email', 'profile', 'openid'])->getAccessTokenResponse($request->code);
+            $providerUser = Socialite::driver('linkedin')->getAccessTokenResponse($request->code);
             \Log::debug($providerUser);
 
             $data = [
