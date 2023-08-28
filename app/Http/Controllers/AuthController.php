@@ -318,7 +318,7 @@ class AuthController extends Controller
         }
 
         try {
-            $providerUser = Socialite::driver('linkedin')->stateless()->scope(['email', 'profile', 'openid'])->user();
+            $providerUser = Socialite::driver('linkedin')->stateless()->scopes(['email', 'profile', 'openid'])->user();
             $data = [
                 "provider" => 'linkedin',
                 "email" => $providerUser->email,
