@@ -33,6 +33,7 @@ class EventServiceProvider extends ServiceProvider
         \SocialiteProviders\Manager\SocialiteWasCalled::class => [
             \SocialiteProviders\Zoom\ZoomExtendSocialite::class . '@handle',
             \SocialiteProviders\Apple\AppleExtendSocialite::class . '@handle',
+            \SocialiteProviders\LinkedIn\LinkedInExtendSocialite::class . '@handle',
         ],
         \App\Events\UserDeleteEvent::class => [
             \App\Listeners\UserDeleteEventListener::class
