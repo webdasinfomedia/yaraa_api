@@ -312,8 +312,6 @@ class AuthController extends Controller
             "code" => "required"
         ]);
 
-        return response()->json(['ok'], 200);
-        exit;
         if ($validator->fails()) {
             $this->setResponse(true, $validator->errors()->all());
             return response()->json($this->_response, 400);
