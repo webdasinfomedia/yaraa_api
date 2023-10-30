@@ -23,6 +23,7 @@ class Tenant extends Model
     public const PROVIDER_PG = "pitchground";
     public const PROVIDER_DF = "dealfuel";
     public const PROVIDER_ST = "stpi";
+    public const PROVIDER_CC = "free_coupon_code";
 
     protected $fillable = [
         'account_user_id',
@@ -38,6 +39,7 @@ class Tenant extends Model
         'pitchground_code_id',
         'dealfuel_code_id',
         'stpi_code_id',
+        'coupon_code_id',
         'cancelled_at',
         'phone',
         'country',
