@@ -100,6 +100,7 @@ $router->group(['prefix' => 'api'], function ($router) {
     $router->post('dealfuel-onboarding', 'DealFuelSignupController@signup');
     $router->post('stpi-onboarding', 'StpiSignupController@signup');
     $router->post('plan-updated', 'PlanController@planUpdated');
+    $router->post('coupon-onboarding', 'CouponCodeSignupController@signup');
 
     $router->group(['middleware' => 'auth'], function ($router) {
         $router->get('/test', function () {

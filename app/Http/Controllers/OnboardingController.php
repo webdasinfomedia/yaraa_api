@@ -38,7 +38,7 @@ class OnboardingController extends Controller
             // app()->instance('master_job', 'yes'); //setting variable to change db to master when executing job
             dispatch(new CreateTenantJob($request->all()));
             
-            $this->_response = ["error" => false, "message" => "Onboarding is in process, it will should take couple of minutes only."];
+            $this->_response = ["error" => false, "message" => "Account Setup is in process, it will take couple of minutes."];
             return response()->json($this->_response, 200);
             
         } catch(\Exception $e) {
