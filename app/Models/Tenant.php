@@ -101,4 +101,28 @@ class Tenant extends Model
             throw new Exception('User account not found.');
         }
     }
+
+    public function appSumoDetails()
+    {
+        return $this->belongsTo(AppSumoCode::class, "app_sumo_code_id");
+    }
+
+    public function appPitchGroundDetails()
+    {
+        return $this->belongsTo(PitchGroundCode::class, "pitchground_code_id");
+    }
+
+    public function appDealFuelDetails()
+    {
+        return $this->belongsTo(DealFuelCode::class, "dealfuel_code_id");
+    }
+    public function appStpiDetails()
+    {
+        return $this->belongsTo(StpiCode::class, "stpi_code_id");
+    }
+
+    public function appCouponCodeDetails()
+    {
+        return $this->belongsTo(CouponCode::class, "coupon_code_id");
+    }
 }

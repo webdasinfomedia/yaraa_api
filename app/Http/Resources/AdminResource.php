@@ -30,8 +30,38 @@ class AdminResource extends JsonResource
             ];
             $plan = Http::withOptions(["verify" => false])->post($url, $params)->throw()->json();
         } else {
-            $plan = null; 
+            $plan = null;
         }
+
+        $publisher = $this->account_user_id ? "NiftySol" : null;
+        $publisher = $this->subscription_id ? "Stripe" : $publisher;
+        $planName = null;
+        $code = null;
+
+        if ($this->appSumoDetails) {
+            $publisher = "AppSumo";
+            $code = $this->appSumoDetails->code;
+        }
+        if ($this->appPitchGroundDetails) {
+            $publisher = "PitchGround";
+            $code = $this->appPitchGroundDetails->code;
+            $plan["name"] = $this->appPitchGroundDetails->plan;
+        }
+        if ($this->appDealFuelDetails) {
+            $publisher = "DealFuel";
+            $code = $this->appDealFuelDetails->code;
+        }
+        if ($this->appStpiDetails) {
+            $publisher = "STPI";
+            $code = $this->appStpiDetails->code;
+        }
+        if ($this->appCouponCodeDetails) {
+            $publisher = "Free Copoun";
+            $code = $this->appCouponCodeDetails->code;
+            $plan["ends_at"] = $this->cancelled_at->format("Y-m-d H:i:s");
+        }
+
+        $plan['created_at'] = $this->created_at->format("d-m-Y");
 
         return [
             "account_id" => $this->account_user_id,
@@ -39,8 +69,8 @@ class AdminResource extends JsonResource
             "email" => $this->created_by,
             "user_limit" => $this->user_limit,
             "plan_details" => $plan,
-            "publisher" => null,
-            "plan_name" => null,
+            "publisher" => $publisher,
+            "code_used" => $code,
             "cost" => null,
         ];
     }
