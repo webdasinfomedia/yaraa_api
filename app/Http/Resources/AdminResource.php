@@ -45,7 +45,7 @@ class AdminResource extends JsonResource
         if ($this->appPitchGroundDetails) {
             $publisher = "PitchGround";
             $code = $this->appPitchGroundDetails->code;
-            $planName = $this->appPitchGroundDetails->plan;
+            $plan["name"] = $this->appPitchGroundDetails->plan;
         }
         if ($this->appDealFuelDetails) {
             $publisher = "DealFuel";
@@ -70,7 +70,6 @@ class AdminResource extends JsonResource
             "user_limit" => $this->user_limit,
             "plan_details" => $plan,
             "publisher" => $publisher,
-            "plan_name" => $planName,
             "code_used" => $code,
             "cost" => null,
         ];
