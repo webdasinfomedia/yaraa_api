@@ -217,8 +217,6 @@
                                                             Hey {{ $name }},</h2>
                                                         <p>Thank you for signing up! We hope you have smooth onboarding experience, If you have any issue you can reach out to us. </p>
                                                         <p>Support Email : <a href="mailto:yaraa.bizsuite@gmail.com">yaraa.bizsuite@gmail.com</a></p>
-                                                        <p>Skype: <a href="skype:dasinfo1?chat">dasinfo1</a></p>
-
                                                     </div>
                                                 </td>
                                             </tr>
