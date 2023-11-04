@@ -35,7 +35,6 @@ class AdminResource extends JsonResource
 
         $publisher = $this->account_user_id ? "NiftySol" : null;
         $publisher = $this->subscription_id ? "Stripe" : $publisher;
-        $planName = null;
         $code = null;
 
         if ($this->appSumoDetails) {
@@ -45,7 +44,7 @@ class AdminResource extends JsonResource
         if ($this->appPitchGroundDetails) {
             $publisher = "PitchGround";
             $code = $this->appPitchGroundDetails->code;
-            $plan["name"] = $this->appPitchGroundDetails->plan;
+            $plan['name'] = $this->appPitchGroundDetails->plan;
         }
         if ($this->appDealFuelDetails) {
             $publisher = "DealFuel";
@@ -69,6 +68,7 @@ class AdminResource extends JsonResource
             "email" => $this->created_by,
             "user_limit" => $this->user_limit,
             "plan_details" => $plan,
+            "plan_name" => $plan['name'] ?? null,
             "publisher" => $publisher,
             "code_used" => $code,
             "cost" => null,
