@@ -55,7 +55,7 @@ class AdminResource extends JsonResource
             $code = $this->appStpiDetails->code;
         }
         if ($this->appCouponCodeDetails) {
-            $publisher = "Free Copoun";
+            $publisher = "Free Coupon";
             $code = $this->appCouponCodeDetails->code;
             $plan["ends_at"] = $this->cancelled_at->format("Y-m-d H:i:s");
         }
