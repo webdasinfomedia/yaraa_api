@@ -460,13 +460,6 @@
                                             </td>
                                         </tr>
                                         <tr>
-                                            <td align="center" class="x m" style="font-size:0;padding:0;padding-bottom:16px;word-break:break-word;">
-                                                <div style="font-family:Poppins,Arial,sans-serif;font-size:13px;line-height:20px;text-align:center;color:#000000;">
-                                                    <p style="Margin:0;text-align:center;"><span style="mso-line-height-rule:exactly;font-size:13px;font-family:Poppins,Arial,sans-serif;font-weight:400;color:#4d4d4d;line-height:20px;">Blog | Contact us | Privacy policy</span></p>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
                                             <td align="center" class="o " style="font-size:0;padding:0;padding-bottom:0;word-break:break-word;">
                                                 <!--[if mso | IE]>
 <table align="center" border="0" cellpadding="0" cellspacing="0"><tr><td>
