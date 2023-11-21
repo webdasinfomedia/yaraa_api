@@ -52,7 +52,7 @@ class StripeWebhookController extends Controller
         if ($productId == config('services.stripe.product_id')) {
 
             $customerId = $payload['data']['object']['customer'];
-            $userLimit = $payload['data']['object']['plan']['metadata']['user_limit'];
+            $userLimit = $payload['data']['object']['plan']['metadata']['user_limit'] ?? 10;
             $subscriptionId = $payload['data']['object']['id'];
 
             $stripe = new StripeClient(config('services.stripe.secret'));
