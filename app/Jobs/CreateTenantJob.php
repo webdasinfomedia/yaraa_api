@@ -93,6 +93,11 @@ class CreateTenantJob extends Job
         ]);
 
         if ($user) {
+
+            if(key_exists('provider',$this->data)){
+                $tenant->provider = $this->data['provider'];
+            }
+            
             $tenant->setup = true;
             if (key_exists('subscription_id', $this->data)) {
                 $tenant->subscription_id = $this->data['subscription_id']; //saved from stripewebhook onboarding

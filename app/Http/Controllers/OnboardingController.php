@@ -36,6 +36,7 @@ class OnboardingController extends Controller
             // Schema::connection('tenant')->getConnection()->reconnect();
 
             // app()->instance('master_job', 'yes'); //setting variable to change db to master when executing job
+            $request->merge(['provider' => "niftysol"]);
             dispatch(new CreateTenantJob($request->all()));
             
             $this->_response = ["error" => false, "message" => "Account Setup is in process, it will take couple of minutes."];
