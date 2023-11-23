@@ -38,8 +38,10 @@ class AdminResource extends JsonResource
         $publisher = $this->account_user_id ? "NiftySol" : null;
         $publisher = $this->subscription_id ? "Stripe" : $publisher;
         $code = null;
-        $plan["ends_at"] = $this->cancelled_at->format("Y-m-d H:i:s");
-        
+        if($this->cancelled_at){
+            $plan["ends_at"] = $this->cancelled_at->format("Y-m-d H:i:s");
+        }
+
         if ($this->appSumoDetails) {
             $publisher = "AppSumo";
             $code = $this->appSumoDetails->code;
