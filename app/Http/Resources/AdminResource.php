@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\LogLocation;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Http;
 
@@ -62,6 +63,13 @@ class AdminResource extends JsonResource
 
         $plan['created_at'] = $this->created_at->format("d-m-Y");
 
+        $this->configure()->use();
+        
+        $location = LogLocation::where("email",$this->created_by)->first();
+        if($location){
+            $location = getLocationFromCoordinates($location->latitude,$location->longitude);
+        }
+
         return [
             "account_id" => $this->account_user_id,
             "business_name" => $this->business_name,
@@ -72,6 +80,9 @@ class AdminResource extends JsonResource
             "publisher" => $publisher,
             "code_used" => $code,
             "cost" => null,
+            "phone" => $this->country ? $this->country . "-" . $this->phone : null,
+            "location" => $location,
         ];
+
     }
 }

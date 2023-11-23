@@ -9,6 +9,7 @@ use App\Models\TenantSlaveUser;
 use App\Models\User;
 use App\Models\UserApp;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
 
@@ -268,4 +269,22 @@ function getDefaultUserModel()
         'email' => null,
         'image' => 'deleted-user.png'
     ];
+}
+
+function getLocationFromCoordinates($lat,$long){
+    try{
+        // https://nominatim.openstreetmap.org/reverse.php?lat=23.0607826&lon=72.5113202&zoom=18&format=jsonv2
+        $url = "https://nominatim.openstreetmap.org/reverse.php?lat=23.0607826&lon=72.5113202&format=jsonv2";
+        $client = new Client();
+        $result = $client->get($url,[
+            "lat" => $lat,
+            "lon" => $long,
+            "format" => "jsonv2"
+        ]);
+
+        $result = json_decode($result->getBody()->getContents(),true);
+        return $result['address'];
+    } catch(\Exception $e) {
+        return null;
+    }
 }
