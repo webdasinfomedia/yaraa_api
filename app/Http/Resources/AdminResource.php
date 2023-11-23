@@ -72,7 +72,7 @@ class AdminResource extends JsonResource
         }
 
         $activityData = null;
-        $activity =  Activity::last();
+        $activity =  Activity::orderBy("activity_time","desc")->first();
         if($activity){
             $activityData['activity'] = $activity->activity;
             $activityData['activity_at'] = $activity->activity_time;
