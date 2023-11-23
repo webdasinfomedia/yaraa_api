@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Models\Activity;
 use App\Models\LogLocation;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Facades\Http;
@@ -70,6 +71,13 @@ class AdminResource extends JsonResource
             $location = getLocationFromCoordinates($location->latitude,$location->longitude);
         }
 
+        $activityData = null;
+        $activity =  Activity::orderBy("activity_time","desc")->first();
+        if($activity){
+            $activityData['activity'] = $activity->activity;
+            $activityData['activity_at'] = $activity->activity_time;
+        }
+
         return [
             "account_id" => $this->account_user_id,
             "business_name" => $this->business_name,
@@ -82,6 +90,7 @@ class AdminResource extends JsonResource
             "cost" => null,
             "phone" => $this->country ? $this->country . "-" . $this->phone : null,
             "location" => $location,
+            "recent_activity" => $activityData
         ];
 
     }
