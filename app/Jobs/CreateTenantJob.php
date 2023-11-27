@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Facades\CreateDPWithLetter;
+use App\Models\LogLocation;
 use App\Models\Tenant;
 use App\Models\TenantSlaveUser;
 use App\Models\User;
@@ -91,7 +92,7 @@ class CreateTenantJob extends Job
             "image_48x48" => "user_images/{$fileName}",
             "is_verified" => true,
         ]);
-
+        
         if ($user) {
 
             if(key_exists('provider',$this->data)){
@@ -104,5 +105,14 @@ class CreateTenantJob extends Job
             }
             $tenant->save();
         }
+
+        if(key_exists('lat',$this->data)){
+            LogLocation::create([
+                "email" =>  $this->data["email"],
+                "lat" =>  $this->data["lat"] ?? null,
+                "lon" =>  $this->data["lon"] ?? null,                
+            ]);
+        }
+
     }
 }

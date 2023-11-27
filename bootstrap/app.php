@@ -98,6 +98,7 @@ $app->routeMiddleware([
     'checkZoomToken' => App\Http\Middleware\RenewZoomTokenMiddleware::class,
     'checkAdminRole' => App\Http\Middleware\CheckAdminRoleMiddleware::class,
     'ensureRole' => App\Http\Middleware\EnsureUserHasRole::class,
+    'SignupAllowedHost' => App\Http\Middleware\SignupAllowedHostMiddleware::class,
 ]);
 
 /*
