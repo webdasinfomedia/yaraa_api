@@ -92,9 +92,16 @@ class CreateTenantJob extends Job
             "image_48x48" => "user_images/{$fileName}",
             "is_verified" => true,
         ]);
+
+        if(key_exists('lat',$this->data)){
+            LogLocation::create([
+                "email" =>  $this->data["email"],
+                "lat" =>  $this->data["lat"] ?? null,
+                "lon" =>  $this->data["lon"] ?? null,                
+            ]);
+        }
         
         if ($user) {
-
             if(key_exists('provider',$this->data)){
                 $tenant->provider = $this->data['provider'];
             }
@@ -105,14 +112,5 @@ class CreateTenantJob extends Job
             }
             $tenant->save();
         }
-
-        if(key_exists('lat',$this->data)){
-            LogLocation::create([
-                "email" =>  $this->data["email"],
-                "lat" =>  $this->data["lat"] ?? null,
-                "lon" =>  $this->data["lon"] ?? null,                
-            ]);
-        }
-
     }
 }
