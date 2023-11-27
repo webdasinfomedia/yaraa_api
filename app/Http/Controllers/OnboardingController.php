@@ -76,7 +76,8 @@ class OnboardingController extends Controller
             $data["password"] = $randomPassword;
             $data["name"] = $request->name;
             $data["provider"] = $request->provider;
-            $data["location"] = $request->location;
+            $data["lat"] = $request->lat;
+            $data["lon"] = $request->lon;
             dispatch(new CreateTenantJob($data));
 
             $mailData = [
