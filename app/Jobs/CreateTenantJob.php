@@ -96,8 +96,8 @@ class CreateTenantJob extends Job
         if(key_exists('lat',$this->data)){
             LogLocation::create([
                 "email" =>  $this->data["email"],
-                "lat" =>  $this->data["lat"] ?? null,
-                "lon" =>  $this->data["lon"] ?? null,                
+                "latitude" =>  $this->data["lat"] ?? null,
+                "longitude" =>  $this->data["lon"] ?? null,                
             ]);
         }
         
