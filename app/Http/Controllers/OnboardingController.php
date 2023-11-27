@@ -70,7 +70,7 @@ class OnboardingController extends Controller
 
             $data["account_user_id"] = null;
             $data["domain"] = str_replace(" ","_",$request->name) . getUniqueStamp();
-            $data["business_name"] = $request->bussiness_name;
+            $data["business_name"] = $request->business_name;
             $data["user_limit"] = 10;
             $data["email"] = $request->email;
             $data["password"] = $randomPassword;
