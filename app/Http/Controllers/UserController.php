@@ -209,10 +209,14 @@ class UserController extends Controller
                 return response()->json($this->_response, 400);
             }
 
-            $user_id = $response['account_user_id'];
             $email = $response['user_email'];
+            if(key_exists('provider',$response)){
+                $tenant = Tenant::where('created_by', $email)->where('provider',$response['provider'])->firstOrFail()->configure()->use();
+            }else{
+                $user_id = $response['account_user_id'];
+                $tenant = Tenant::where('account_user_id', strval($user_id))->firstOrFail()->configure()->use();
+            }
 
-            $tenant = Tenant::where('account_user_id', strval($user_id))->firstOrFail()->configure()->use();
             $user = User::where('email', $email)->firstOrFail();
 
             /** Login user and add custom claim to access token to find tenant later on other apis **/

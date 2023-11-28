@@ -3,6 +3,7 @@
 namespace App\Jobs;
 
 use App\Facades\CreateDPWithLetter;
+use App\Models\LogLocation;
 use App\Models\Tenant;
 use App\Models\TenantSlaveUser;
 use App\Models\User;
@@ -92,8 +93,15 @@ class CreateTenantJob extends Job
             "is_verified" => true,
         ]);
 
+        if(key_exists('lat',$this->data)){
+            LogLocation::create([
+                "email" =>  $this->data["email"],
+                "latitude" =>  $this->data["lat"] ?? null,
+                "longitude" =>  $this->data["lon"] ?? null,                
+            ]);
+        }
+        
         if ($user) {
-
             if(key_exists('provider',$this->data)){
                 $tenant->provider = $this->data['provider'];
             }

@@ -95,6 +95,7 @@ $router->group(['prefix' => 'api'], function ($router) {
     $router->post('sso_login', 'UserController@ssoLogin');
 
     $router->post('onboarding', 'OnboardingController@index');
+    $router->post('onboarding-direct', ['middleware' => 'SignupAllowedHost','uses' => 'OnboardingController@freeGoogleMarketPlaceSignup']); //user not created on niftysol accounts
     $router->post('app-sumo-onboarding', 'AppSumoSignupController@signup');
     $router->post('pitchground-onboarding', 'PitchGroundSignupController@signup');
     $router->post('dealfuel-onboarding', 'DealFuelSignupController@signup');
