@@ -16,9 +16,11 @@ class SignupAllowedHostMiddleware
     public function handle($request, Closure $next)
     {
         $allowedHosts = explode(',', env('SIGNUP_ALLOWED_DOMAINS'));
-        $requestHost = parse_url($request->headers->get('origin'),  PHP_URL_HOST);
+        $requestHost = parse_url($request->headers->get('origin'), PHP_URL_HOST);
 
-        if(!in_array($requestHost, $allowedHosts, false)) {
+        \Log::debug("host: " . $requestHost);
+
+        if (!in_array($requestHost, $allowedHosts, false)) {
             return response()->json([
                 "error" => true,
                 "message" => "request blocked from {$requestHost}"
