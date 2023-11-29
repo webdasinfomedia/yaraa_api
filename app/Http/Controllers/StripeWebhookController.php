@@ -67,9 +67,10 @@ class StripeWebhookController extends Controller
             $data["email"] = $customer->email;
             $data["password"] = $randomPassword;
             $data["name"] = $customer->name;
-            $data["country"] =  $customer->address->country;
+            $data["country"] = $customer->address->country;
             $data["subscription_id"] = $subscriptionId;
             $data["provider"] = "stripe";
+            $data["cancelled_after_days"] = 90;
 
             dispatch(new CreateTenantJob($data));
 
