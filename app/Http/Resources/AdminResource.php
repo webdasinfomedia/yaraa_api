@@ -35,10 +35,10 @@ class AdminResource extends JsonResource
             $plan = null;
         }
 
-        $publisher = $this->account_user_id ? "NiftySol" : null;
+        $publisher = $this->account_user_id ? "NiftySol" : $this->provider;
         $publisher = $this->subscription_id ? "Stripe" : $publisher;
         $code = null;
-        if($this->cancelled_at){
+        if ($this->cancelled_at) {
             $plan["ends_at"] = $this->cancelled_at->format("Y-m-d H:i:s");
         }
 
@@ -67,15 +67,15 @@ class AdminResource extends JsonResource
         $plan['created_at'] = $this->created_at->format("d-m-Y");
 
         $this->configure()->use();
-        
-        $location = LogLocation::where("email",$this->created_by)->first();
-        if($location){
-            $location = getLocationFromCoordinates($location->latitude,$location->longitude);
+
+        $location = LogLocation::where("email", $this->created_by)->first();
+        if ($location) {
+            $location = getLocationFromCoordinates($location->latitude, $location->longitude);
         }
 
         $activityData = null;
-        $activity =  Activity::orderBy("activity_time","desc")->first();
-        if($activity){
+        $activity = Activity::orderBy("activity_time", "desc")->first();
+        if ($activity) {
             $activityData['activity'] = $activity->activity;
             $activityData['activity_at'] = $activity->activity_time;
         }
