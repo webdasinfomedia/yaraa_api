@@ -87,7 +87,7 @@ class AdminResource extends JsonResource
             "user_limit" => $this->user_limit,
             "plan_details" => $plan,
             "plan_name" => $plan['name'] ?? null,
-            "publisher" => $publisher,
+            "publisher" => ucfirst($publisher),
             "code_used" => $code,
             "cost" => null,
             "phone" => $this->country ? $this->country . "-" . $this->phone : null,
