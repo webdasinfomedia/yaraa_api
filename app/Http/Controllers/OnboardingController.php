@@ -69,7 +69,7 @@ class OnboardingController extends Controller
             $randomPassword = Str::random(10);
 
             $data["account_user_id"] = null;
-            $data["domain"] = str_replace(" ","_",$request->name) . getUniqueStamp();
+            $data["domain"] = str_replace(" ","_",$request->business_name) . getUniqueStamp();
             $data["business_name"] = $request->business_name;
             $data["user_limit"] = 10;
             $data["email"] = $request->email;
