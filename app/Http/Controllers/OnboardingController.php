@@ -30,7 +30,7 @@ class OnboardingController extends Controller
             return response()->json($this->_response, 400);
         }
 
-        try{
+        try {
             // config([
             //     'database.connections.tenant.database' => 'yaraa_master',
             // ]);
@@ -41,18 +41,19 @@ class OnboardingController extends Controller
             // app()->instance('master_job', 'yes'); //setting variable to change db to master when executing job
 
             dispatch(new CreateTenantJob($request->all()));
-            
+
             $this->_response = ["error" => false, "message" => "Account Setup is in process, it will take couple of minutes."];
             return response()->json($this->_response, 200);
-            
-        } catch(\Exception $e) {
+
+        } catch (\Exception $e) {
             $this->setResponse(true, $e->getMessage());
             return response()->json($this->_response, 500);
         }
-        
+
     }
 
-    public function freeGoogleMarketPlaceSignup(Request $request){
+    public function freeGoogleMarketPlaceSignup(Request $request)
+    {
         $validator = Validator::make($request->all(), [
             'business_name' => 'required',
             'name' => 'required',
@@ -65,11 +66,11 @@ class OnboardingController extends Controller
             return response()->json($this->_response, 400);
         }
 
-        try{
+        try {
             $randomPassword = Str::random(10);
 
             $data["account_user_id"] = null;
-            $data["domain"] = str_replace(" ","_",$request->business_name) . getUniqueStamp();
+            $data["domain"] = str_replace(" ", "_", $request->business_name) . getUniqueStamp();
             $data["business_name"] = $request->business_name;
             $data["user_limit"] = 10;
             $data["email"] = $request->email;
@@ -78,6 +79,8 @@ class OnboardingController extends Controller
             $data["provider"] = $request->provider;
             $data["lat"] = $request->lat;
             $data["lon"] = $request->lon;
+            $data["cancelled_after_days"] = 90;
+
             dispatch(new CreateTenantJob($data));
 
             $mailData = [
@@ -88,11 +91,11 @@ class OnboardingController extends Controller
 
             /** queue an email to send to customer **/
             Mail::to($request->email)->send(new SendStripeOnboardingSuccessfulMail($mailData));
-            
+
             $this->_response = ["error" => false, "message" => "Account Setup is in process, it will take couple of minutes."];
             return response()->json($this->_response, 200);
-            
-        } catch(\Exception $e) {
+
+        } catch (\Exception $e) {
             $this->setResponse(true, $e->getMessage());
             return response()->json($this->_response, 500);
         }
