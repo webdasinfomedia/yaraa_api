@@ -65,7 +65,7 @@ $router->group(['prefix' => 'assets', 'middleware' => 'cors'], function ($router
 
         $type = 'image/png';
         $headers = ['Content-Type' => $type];
-        return  new BinaryFileResponse($filePath, 200, $headers);
+        return new BinaryFileResponse($filePath, 200, $headers);
 
         return response()->download($filePath, null, [
             'Cache-Control' => 'no-cache, no-store, must-revalidate',
@@ -95,7 +95,7 @@ $router->group(['prefix' => 'api'], function ($router) {
     $router->post('sso_login', 'UserController@ssoLogin');
 
     $router->post('onboarding', 'OnboardingController@index');
-    $router->post('onboarding-direct', ['middleware' => 'SignupAllowedHost','uses' => 'OnboardingController@freeGoogleMarketPlaceSignup']); //user not created on niftysol accounts
+    $router->post('onboarding-direct', 'OnboardingController@freeGoogleMarketPlaceSignup'); //user not created on niftysol accounts
     $router->post('app-sumo-onboarding', 'AppSumoSignupController@signup');
     $router->post('pitchground-onboarding', 'PitchGroundSignupController@signup');
     $router->post('dealfuel-onboarding', 'DealFuelSignupController@signup');
@@ -212,8 +212,8 @@ $router->group(['prefix' => 'api'], function ($router) {
         });
 
         /*
-        * Task Module Routes
-        */
+         * Task Module Routes
+         */
         $router->group(['prefix' => 'task'], function ($router) {
             $router->post('create', 'TaskController@store');
             $router->post('list', 'TaskController@index');
@@ -320,7 +320,7 @@ $router->group(['prefix' => 'api'], function ($router) {
         $router->group(['prefix' => 'customer'], function ($router) {
             $router->get('list', 'CustomerController@index');
             $router->post('create', 'CustomerController@store');
-            $router->get('current/projects',  ['middleware' => 'ensureRole:customer', 'uses' => 'CustomerController@getCurrentProjects']);
+            $router->get('current/projects', ['middleware' => 'ensureRole:customer', 'uses' => 'CustomerController@getCurrentProjects']);
             $router->get('past/projects', ['middleware' => 'ensureRole:customer', 'uses' => 'CustomerController@getPastProjects']);
         });
 

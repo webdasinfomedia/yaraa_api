@@ -7,6 +7,7 @@ use App\Models\LogLocation;
 use App\Models\Tenant;
 use App\Models\TenantSlaveUser;
 use App\Models\User;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\ImageManagerStatic as Image;
@@ -81,7 +82,7 @@ class CreateTenantJob extends Job
         $image_resize = Image::make(Storage::path($path));
         $image_resize->resize(48, 48); //before 60x60
         $fileFullName = $imageName;
-        $fileName = str_replace(' ', '_', pathinfo($fileFullName, PATHINFO_FILENAME)) .  getUniqueStamp() . '_48x48.' .  'png';
+        $fileName = str_replace(' ', '_', pathinfo($fileFullName, PATHINFO_FILENAME)) . getUniqueStamp() . '_48x48.' . 'png';
         $image_resize->save(base_path('public/storage/user_images/' . $fileName), 60);
 
         $user = User::create([
@@ -93,23 +94,25 @@ class CreateTenantJob extends Job
             "is_verified" => true,
         ]);
 
-        if(key_exists('lat',$this->data)){
+        if (key_exists('lat', $this->data)) {
             LogLocation::create([
-                "email" =>  $this->data["email"],
-                "latitude" =>  $this->data["lat"] ?? null,
-                "longitude" =>  $this->data["lon"] ?? null,                
+                "email" => $this->data["email"],
+                "latitude" => $this->data["lat"] ?? null,
+                "longitude" => $this->data["lon"] ?? null,
             ]);
         }
-        
+
         if ($user) {
-            if(key_exists('provider',$this->data)){
+            if (key_exists('provider', $this->data)) {
                 $tenant->provider = $this->data['provider'];
             }
-            
-            $tenant->setup = true;
             if (key_exists('subscription_id', $this->data)) {
                 $tenant->subscription_id = $this->data['subscription_id']; //saved from stripewebhook onboarding
             }
+            if (key_exists('cancelled_after_days', $this->data)) {
+                $tenant->cancelled_at = Carbon::now()->add($this->data['cancelled_after_days'], 'day');
+            }
+            $tenant->setup = true;
             $tenant->save();
         }
     }

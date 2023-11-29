@@ -18,7 +18,7 @@ class SignupAllowedHostMiddleware
         $allowedHosts = explode(',', env('SIGNUP_ALLOWED_DOMAINS'));
         $requestHost = parse_url($request->headers->get('origin'), PHP_URL_HOST);
 
-        \Log::debug("host: " . $requestHost);
+        \Log::debug($request->headers);
 
         if (!in_array($requestHost, $allowedHosts, false)) {
             return response()->json([
