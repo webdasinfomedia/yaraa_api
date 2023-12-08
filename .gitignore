@@ -1,7 +1,4 @@
-/vendor
-/.idea
-Homestead.json
-Homestead.yaml
+/mongo/data
+/caddy_config/caddy
+/caddy_data/caddy
 .env
-.phpunit.result.cache
-.vscode

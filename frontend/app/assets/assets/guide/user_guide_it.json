@@ -1,0 +1,123 @@
+{
+  "title_data" : [
+    {
+      "title_id" : 1,
+      "title_name" : "Progetto",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "In che modo l'utente crea un nuovo progetto?",
+          "question_answer" : "In Dashboard fai clic sull'icona più o vai alla scheda progetto dal menu laterale e fai clic sull'icona più per creare un nuovo progetto. "
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "Come si può modificare un progetto esistente? ",
+          "question_answer" : "Vai alla pagina dell'elenco dei progetti e l'utente può vedere l'opzione di modifica del progetto dal menu a 3 punti. "
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "Come si possono aggiungere pietre miliari al progetto?",
+          "question_answer" : "Vai alla pagina dell'elenco dei progetti, fai clic su un particolare progetto, seleziona la scheda Panoramica, l'utente può vedere il pulsante Aggiungi traguardo."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : " Come può l'utente copiare il link? ",
+          "question_answer" : "Vai alla pagina dell'elenco dei progetti e l'utente può copiare il collegamento dal menu a 3 punti. "
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "Come può l'utente aggiungere una nuova attività a un particolare progetto?",
+          "question_answer" : "Nella pagina dell'elenco dei progetti, l'utente può vedere il pulsante Aggiungi attività nell'elenco degli elementi e aggiungere l'opzione dell'attività dal menu a 3 punti."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "Come aggiungere un progetto preferito e uno non preferito?",
+          "question_answer" : "Nella pagina dell'elenco dei progetti, l'utente può toccare l'icona a forma di stella per aggiungere un progetto preferito e rimuovere un progetto preferito. "
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "Come si può Archiviare/Cancellare Progetto? ",
+          "question_answer" : "Vai alla pagina dell'elenco dei progetti e l'utente può vedere il progetto di eliminazione dal menu a 3 punti. "
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "Come può l'utente ripristinare il progetto cancellato? ",
+          "question_answer" : "Vai alla scheda Archivia elementi dal menu laterale, seleziona la scheda progetto, l'utente può vedere il pulsante di ripristino. "
+        }
+      ]
+    },
+    {
+      "title_id" : 2,
+      "title_name" : "Compito",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "In che modo gli utenti creano una nuova attività?",
+          "question_answer" : "In Dashboard fai clic sull'icona più o vai alla scheda attività dal menu laterale e fai clic sull'icona più per creare una nuova attività. "
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "Come si può modificare un'attività esistente? ",
+          "question_answer" : "Vai alla pagina dell'elenco delle attività e l'utente può vedere l'attività di modifica dal menu a 3 punti. "
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "In che modo gli utenti possono completare le attività? ",
+          "question_answer" : "Vai alla pagina dell'elenco delle attività e l'utente può vedere l'opzione dell'attività completa dal menu a 3 punti. "
+        },
+        {
+          "question_id" : 4,
+          "question_title" : "Come posso eliminare un'attività?",
+          "question_answer" : "Vai alla pagina dell'elenco delle attività e l'utente può vedere l'opzione Elimina attività dal menu a 3 punti."
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "Come si può copiare l'attività?",
+          "question_answer" : " Vai alla pagina dell'elenco delle attività e l'utente può copiare il collegamento dal menu a 3 punti."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "Come possono gli utenti spostare le attività?",
+          "question_answer" : "Vai alla pagina dell'elenco delle attività e l'utente può spostarsi dal menu a 3 punti"
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "Come può l'utente aggiungere un'attività secondaria?",
+          "question_answer" : "Vai alla pagina dell'elenco delle attività, fai clic su una particolare attività, l'utente può aggiungere una sottoattività facendo clic sull'icona più."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "Come può l'utente avviare, fermare, mettere in pausa il timer per una particolare attività? ",
+          "question_answer" : " Vai alla pagina dell'elenco delle attività, fai clic su una particolare attività, l'utente può avviare, interrompere, mettere in pausa il timer facendo clic sull'icona del timer. "
+        },
+        {
+          "question_id" : 9,
+          "question_title" : "Come si possono aggiungere pietre miliari all'attività? ",
+          "question_answer" : "L'utente può aggiungere una pietra miliare quando si aggiunge attività e modificare l'ora dell'attività selezionare il progetto, quindi l'utente può selezionare la pietra miliare disponibile nel progetto."
+        }
+      ]
+    },
+    {
+      "title_id" : 3,
+      "title_name" : "Membro",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "In che modo gli utenti possono invitare membri per progetti, attività e team?",
+          "question_answer" : " Fare clic sul membro del team dal menu laterale e l'utente può vedere l'icona più per aggiungere un membro del team. "
+        }
+      ]
+    },
+    {
+      "title_id" : 4,
+      "title_name" : "Profilo",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Come possono gli utenti modificare i profili?",
+          "question_answer" : "Fare clic sull'icona del profilo utente, l'utente può vedere la schermata del profilo e modificare il profilo."
+        }
+      ]
+    }
+  ]
+}

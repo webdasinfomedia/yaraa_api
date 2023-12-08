@@ -1,0 +1,179 @@
+{
+  "language_list": [
+    {
+      "language_id": 1,
+      "language_title": "английский",
+      "language_code": "en"
+    },
+    {
+      "language_id": 2,
+      "language_title": "хинди",
+      "language_code": "hi"
+    },
+    {
+      "language_id": 3,
+      "language_title": "финский",
+      "language_code": "fi"
+    },
+    {
+      "language_id": 4,
+      "language_title": "Гуджарати",
+      "language_code": "gu"
+    },
+    {
+      "language_id": 5,
+      "language_title": "хорватский",
+      "language_code": "hr"
+    },
+    {
+      "language_id": 6,
+      "language_title": "венгерский язык",
+      "language_code": "hu"
+    },
+    {
+      "language_id": 7,
+      "language_title": "итальянский",
+      "language_code": "it"
+    },
+    {
+      "language_id": 8,
+      "language_title":"японский язык",
+      "language_code": "ja"
+    },
+    {
+      "language_id": 9,
+      "language_title": "каннада",
+      "language_code": "kn"
+    },
+    {
+      "language_id": 10,
+      "language_title":"Литовский" ,
+      "language_code": "lt"
+    },
+    {
+      "language_id": 11,
+      "language_title": "маори",
+      "language_code":"ml"
+    },
+    {
+      "language_id": 12,
+      "language_title":"маратхи",
+      "language_code": "mr"
+    },
+    {
+      "language_id": 13,
+      "language_title":"норвежский язык",
+      "language_code":  "no"
+    },
+    {
+      "language_id": 14,
+      "language_title":"панджаби",
+      "language_code":  "pa"
+    },
+    {
+      "language_id": 15,
+      "language_title": "полировать",
+      "language_code": "pl"
+    },
+    {
+      "language_id": 16,
+      "language_title": "португальский",
+      "language_code": "pt"
+    },
+    {
+      "language_id": 17,
+      "language_title": "румынский",
+      "language_code": "ro"
+    },
+    {
+      "language_id": 18,
+      "language_title": "русский",
+      "language_code": "ru"
+    },
+    {
+      "language_id": 19,
+      "language_title": "шведский",
+      "language_code": "sv"
+    },
+    {
+      "language_id": 20,
+      "language_title": "тамильский",
+      "language_code": "ta"
+    },
+    {
+      "language_id": 21,
+      "language_title": "телугу",
+      "language_code": "te"
+    },
+    {
+      "language_id": 22,
+      "language_title": "турецкий",
+      "language_code": "tr"
+    },
+    {
+      "language_id": 23,
+      "language_title": "урду",
+      "language_code": "ur"
+    },
+    {
+      "language_id": 24,
+      "language_title": "Голландский",
+      "language_code": "nl"
+    },
+    {
+      "language_id": 25,
+      "language_title": "Французский",
+      "language_code": "fr"
+    },
+    {
+      "language_id": 26,
+      "language_title": "арабский",
+      "language_code": "ar"
+    },
+    {
+      "language_id": 27,
+      "language_title": "Бангали",
+      "language_code": "bn"
+    },
+    {
+      "language_id": 28,
+      "language_title": "Каталонский",
+      "language_code": "ca"
+    },
+    {
+      "language_id": 29,
+      "language_title": "Чешский",
+      "language_code": "cs"
+    },
+    {
+      "language_id": 30,
+      "language_title": "датский",
+      "language_code": "da"
+    },
+    {
+      "language_id": 31,
+      "language_title": "Немецкий",
+      "language_code": "de"
+    },
+    {
+      "language_id": 32,
+      "language_title": "греческий",
+      "language_code": "el"
+    },
+    {
+      "language_id": 33,
+      "language_title": "персидский",
+      "language_code": "fa"
+    },
+    {
+      "language_id": 34,
+      "language_title": "испанский язык",
+      "language_code": "es"
+    },
+    {
+      "language_id": 35,
+      "language_title": "эстонский",
+      "language_code": "et"
+    }
+  ]
+}

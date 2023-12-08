@@ -1,0 +1,123 @@
+{
+  "title_data" : [
+    {
+      "title_id" : 1,
+      "title_name" : "Project",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "How does the user create a new project?",
+          "question_answer" : "In Dashboard click on the plus icon or go to the project tab from the side menu and click on the plus icon for create new project. "
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "How can edit an existing project?",
+          "question_answer" : "Go to the project list page and the user can see the edit project option from the 3 dot menu."
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "How can add milestones to the project?",
+          "question_answer" : "Go to the project list page click on a particular project, select the overview tab, user can see add milestone button."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : "How can the user copy link?",
+          "question_answer" : "Go to the project list page and the user can copy the link from the 3 dot menu."
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "How can the user add a new task to a particular project?",
+          "question_answer" : "On the project list page user can see add task button in listing items and add the task option from the 3 dot menu."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "How to add a favorite and unfavourite project?",
+          "question_answer" : "On the project list page, the user can tap the star icon to add a favorite project and remove a favorite project."
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "How can Archive/Delete Project?",
+          "question_answer" : "Go to the project list page and the user can see the delete project from the 3 dot menu."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "How can the user restore deleted project ?",
+          "question_answer" : "Go to the Archive items tab from the side menu, select the project tab, user can see the restore button."
+        }
+      ]
+    },
+    {
+      "title_id" : 2,
+      "title_name" : "Task",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "How do users create a new task?",
+          "question_answer" : "In Dashboard click on the plus icon or go to the task tab from the side menu and click on the plus icon to create new task. "
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "How can edit an existing task?",
+          "question_answer" : "Go to the task list page and user can see the edit task from the 3 dot menu."
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "How can users complete tasks?",
+          "question_answer" : "Go to the task list page and the user can see the complete task option from 3 dot menu."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : "How can delete a task?",
+          "question_answer" : "Go to the task list page and the user can see the delete task option from 3 dot menu."
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "How can copy task?",
+          "question_answer" : "Go to task list page and user can copy link from 3 dot menu."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "How can users move tasks?",
+          "question_answer" : "Go to the task list page and the user can move from 3 dot menu"
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "How can the user add a sub task?",
+          "question_answer" : "Go to the task list page, click on a particular task, user can add subtask by click on the plus icon."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "How can the user start, stop, pause the timer for a particular task?",
+          "question_answer" : "Go to the task list page, click on a particular task, user can start, stop, pause the timer by click on the timer icon."
+        },
+        {
+          "question_id" : 9,
+          "question_title" : "How can add milestones to the task?",
+          "question_answer" : "User can add milestone when add task and edit task time select project then user can select milestone that available in project."
+        }
+      ]
+    },
+    {
+      "title_id" : 3,
+      "title_name" : "Member",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "How can users invite members for projects, tasks, and teams?",
+          "question_answer" : "Click on team member from sidemenu and user can see plus icon for add team member."
+        }
+      ]
+    },
+    {
+      "title_id" : 4,
+      "title_name" : "Profile",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "How can users edit profiles?",
+          "question_answer" : "Click on the user profile icon, the user can see the profile screen and edit the profile."
+        }
+      ]
+    }
+  ]
+}

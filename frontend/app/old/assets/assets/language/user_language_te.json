@@ -1,0 +1,179 @@
+{
+  "language_list": [
+    {
+      "language_id": 1,
+      "language_title": "ఆంగ్ల",
+      "language_code": "en"
+    },
+    {
+      "language_id": 2,
+      "language_title": "హిందీ",
+      "language_code": "hi"
+    },
+    {
+      "language_id": 3,
+      "language_title": "ఫిన్నిష్",
+      "language_code": "fi"
+    },
+    {
+      "language_id": 4,
+      "language_title": "గుజరాతీ",
+      "language_code": "gu"
+    },
+    {
+      "language_id": 5,
+      "language_title": "క్రొయేషియన్",
+      "language_code": "hr"
+    },
+    {
+      "language_id": 6,
+      "language_title": "హంగేరియన్",
+      "language_code": "hu"
+    },
+    {
+      "language_id": 7,
+      "language_title": "ఇటాలియన్",
+      "language_code": "it"
+    },
+    {
+      "language_id": 8,
+      "language_title":"జపనీస్",
+      "language_code": "ja"
+    },
+    {
+      "language_id": 9,
+      "language_title": "కన్నడ",
+      "language_code": "kn"
+    },
+    {
+      "language_id": 10,
+      "language_title":"లిథువేనియన్" ,
+      "language_code": "lt"
+    },
+    {
+      "language_id": 11,
+      "language_title": "మావోరీ",
+      "language_code":"ml"
+    },
+    {
+      "language_id": 12,
+      "language_title":"మరాఠీ",
+      "language_code": "mr"
+    },
+    {
+      "language_id": 13,
+      "language_title":"నార్వేజియన్",
+      "language_code":  "no"
+    },
+    {
+      "language_id": 14,
+      "language_title":"పంజాబీ",
+      "language_code":  "pa"
+    },
+    {
+      "language_id": 15,
+      "language_title": "పాలిష్",
+      "language_code": "pl"
+    },
+    {
+      "language_id": 16,
+      "language_title": "పోర్చుగీస్",
+      "language_code": "pt"
+    },
+    {
+      "language_id": 17,
+      "language_title": "రొమేనియన్",
+      "language_code": "ro"
+    },
+    {
+      "language_id": 18,
+      "language_title": "రష్యన్",
+      "language_code": "ru"
+    },
+    {
+      "language_id": 19,
+      "language_title": "స్వీడిష్",
+      "language_code": "sv"
+    },
+    {
+      "language_id": 20,
+      "language_title": "తమిళం",
+      "language_code": "ta"
+    },
+    {
+      "language_id": 21,
+      "language_title": "తెలుగు",
+      "language_code": "te"
+    },
+    {
+      "language_id": 22,
+      "language_title": "టర్కిష్",
+      "language_code": "tr"
+    },
+    {
+      "language_id": 23,
+      "language_title": "ఉర్దూ",
+      "language_code": "ur"
+    },
+    {
+      "language_id": 24,
+      "language_title": "డచ్",
+      "language_code": "nl"
+    },
+    {
+      "language_id": 25,
+      "language_title": "ఫ్రెంచ్",
+      "language_code": "fr"
+    },
+    {
+      "language_id": 26,
+      "language_title": "అరబిక్",
+      "language_code": "ar"
+    },
+    {
+      "language_id": 27,
+      "language_title": "బంగాలీ",
+      "language_code": "bn"
+    },
+    {
+      "language_id": 28,
+      "language_title": "కాటలాన్",
+      "language_code": "ca"
+    },
+    {
+      "language_id": 29,
+      "language_title": "చెక్",
+      "language_code": "cs"
+    },
+    {
+      "language_id": 30,
+      "language_title": "డానిష్",
+      "language_code": "da"
+    },
+    {
+      "language_id": 31,
+      "language_title": "జర్మన్",
+      "language_code": "de"
+    },
+    {
+      "language_id": 32,
+      "language_title": "గ్రీకు",
+      "language_code": "el"
+    },
+    {
+      "language_id": 33,
+      "language_title": "పర్షియన్",
+      "language_code": "fa"
+    },
+    {
+      "language_id": 34,
+      "language_title": "స్పానిష్",
+      "language_code": "es"
+    },
+    {
+      "language_id": 35,
+      "language_title": "ఎస్టోనియన్",
+      "language_code": "et"
+    }
+  ]
+}

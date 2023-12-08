@@ -1,0 +1,75 @@
+version: "3"
+services:
+  caddy:
+    image: caddy:2
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - ./caddy_data:/data
+      - ./caddy_config:/config
+      - ./certs:/etc/caddy/certs
+    environment:
+      - FRONTEND_DOMAIN=${FRONTEND_DOMAIN}
+      - API_DOMAIN=${API_DOMAIN}
+      - MONGO_DOMAIN=${MONGO_DOMAIN}
+    networks:
+      - internal_network
+  laravel:
+    build:
+      context: ./api
+    depends_on:
+      - mongodb
+    # user: 1000:1000
+    volumes:
+      - /var/www/html/vendor
+      - /var/www/html/public/storage
+      - ./api/app:/var/www/html
+      - ./api/logs:/logs
+    environment:
+      - MONGO_DB_HOST=mongodb
+    # command: sh -c "chmod -R 777 /var/www/html/storage/logs"
+    # command: sh -c "chmod -R 777 /var/log/supervisor && php-fpm"
+    networks:
+      - internal_network
+  mongo:
+    image: mongo:5.0.6
+    container_name: mongo
+    # ports:
+    # - "27017:27017"
+    volumes:
+      - ./mongo/data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=
+      - MONGO_INITDB_ROOT_PASSWORD=
+    restart: always
+    networks:
+      - internal_network
+  mongo-express:
+    image: mongo-express:0.54
+    container_name: mongogui
+    # ports:
+    # - "8081:8081"
+    depends_on:
+      - mongo
+    environment:
+      # - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      # - ME_CONFIG_MONGODB_ADMINPASSWORD=example
+      - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017/
+      # - ME_CONFIG_BASICAUTH_USERNAME=admin #mongo-express login credentials
+      # - ME_CONFIG_BASICAUTH_PASSWORD=admin #mongo-express login credentials
+    networks:
+      - internal_network
+
+  frontend:
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend/app:/usr/share/nginx/html
+    # Add other Flutter environment variables as needed
+    networks:
+      - internal_network
+networks:
+  internal_network:
+    driver: bridge

@@ -1,0 +1,123 @@
+{
+  "title_data" : [
+    {
+      "title_id" : 1,
+      "title_name" : "Projekt",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Kako korisnik stvara novi projekt?",
+          "question_answer" : "Na nadzornoj ploči kliknite ikonu plus ili idite na karticu projekta s bočnog izbornika i kliknite ikonu plus za stvaranje novog projekta."
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "Kako možete urediti postojeći projekt? ",
+          "question_answer" : "Idite na stranicu s popisom projekata i korisnik može vidjeti opciju uređivanja projekta s izbornika s 3 točke. "
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "Kako možete dodati prekretnice u projekt?",
+          "question_answer" : "Idite na stranicu s popisom projekata, kliknite na određeni projekt, odaberite karticu pregleda, korisnik može vidjeti gumb za dodavanje prekretnice."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : "Kako korisnik može kopirati vezu? ",
+          "question_answer" : "Idite na stranicu s popisom projekata i korisnik može kopirati vezu s izbornika s tri točke. "
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "Kako korisnik može dodati novi zadatak određenom projektu?",
+          "question_answer" : "Na stranici s popisom projekata korisnik može vidjeti gumb za dodavanje zadatka u stavkama popisa i dodati opciju zadatka s izbornika s tri točke."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "Kako dodati omiljeni i omiljeni projekt?",
+          "question_answer" : "Na stranici s popisom projekata korisnik može dodirnuti ikonu zvjezdice za dodavanje omiljenog projekta i uklanjanje omiljenog projekta. "
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "Kako arhivirati / izbrisati projekt?",
+          "question_answer" : "Idite na stranicu s popisom projekata i korisnik može vidjeti izbrisani projekt s izbornika s 3 točke."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "Kako korisnik može vratiti izbrisani projekt?",
+          "question_answer" : "Idite na karticu Arhivske stavke sa bočnog izbornika, odaberite karticu projekta, korisnik može vidjeti gumb Vrati."
+        }
+      ]
+    },
+    {
+      "title_id" : 2,
+      "title_name" : "Zadatak",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Kako korisnici stvaraju novi zadatak?",
+          "question_answer" : "Na nadzornoj ploči kliknite ikonu plus ili idite na karticu zadatka s bočnog izbornika i kliknite ikonu plus za stvaranje novog zadatka."
+        },
+        {
+          "question_id" : 2,
+          "question_title" : " Kako možete urediti postojeći zadatak?",
+          "question_answer" : " Idite na stranicu s popisom zadataka i korisnik može vidjeti zadatak uređivanja s izbornika s tri točke."
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "Kako korisnici mogu dovršiti zadatke?",
+          "question_answer" : "Idite na stranicu s popisom zadataka i korisnik može vidjeti cjelovitu opciju zadatka iz izbornika s 3 točke."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : " Kako mogu izbrisati zadatak?",
+          "question_answer" : "Idite na stranicu s popisom zadataka i korisnik može vidjeti opciju brisanja zadatka s izbornika s 3 točke."
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "Kako kopirati zadatak? ",
+          "question_answer" : "dite na stranicu s popisom zadataka i korisnik može kopirati vezu s izbornika s tri točke."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "Kako korisnici mogu pomicati zadatke?",
+          "question_answer" : "Idite na stranicu s popisom zadataka i korisnik se može pomaknuti s izbornika s tri točke"
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "Kako korisnik može dodati podzadatak?",
+          "question_answer" : "Idite na stranicu s popisom zadataka, kliknite na određeni zadatak, korisnik može dodati podzadatak klikom na ikonu plus."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "Kako korisnik može pokrenuti, zaustaviti, pauzirati mjerač vremena za određeni zadatak? ",
+          "question_answer" : " Idite na stranicu s popisom zadataka, kliknite na određeni zadatak, korisnik može pokrenuti, zaustaviti, pauzirati mjerač vremena klikom na ikonu mjerača vremena. "
+        },
+        {
+          "question_id" : 9,
+          "question_title" : "Kako zadatku možete dodati prekretnice? ",
+          "question_answer" : "Korisnik može dodati prekretnicu prilikom dodavanja zadatka i uređivanja vremena odabira projekta, a zatim korisnik može odabrati prekretnicu koja je dostupna u projektu."
+        }
+      ]
+    },
+    {
+      "title_id" : 3,
+      "title_name" : "Član",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Kako korisnici mogu pozvati članove za projekte, zadatke i timove? ",
+          "question_answer" : "Pritisnite člana tima sa bočnog izbornika i korisnik može vidjeti plus ikonu za dodavanje člana tima. "
+        }
+      ]
+    },
+    {
+      "title_id" : 4,
+      "title_name" : "Profil",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Kako korisnici mogu uređivati \u200B\u200Bprofile?",
+          "question_answer" : "Pritisnite ikonu korisničkog profila, korisnik može vidjeti zaslon profila i urediti profil."
+        }
+      ]
+    }
+  ]
+}

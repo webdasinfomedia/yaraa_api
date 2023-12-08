@@ -1,0 +1,53 @@
+{$API_DOMAIN} {
+  # root * /var/www/public/public
+  # encode gzip
+  php_fastcgi unix//run/php/php-7.4-fpm.sock
+	file_server
+  reverse_proxy laravel:8000
+
+  handle_errors {
+    @isPreflight {
+        expression {http.request.method} == "OPTIONS"
+    }
+  }
+
+  tls /etc/caddy/certs/yaraamanager.crt /etc/caddy/certs/yaraamanager.key
+
+    # respond @isPreflight 200 {
+  header /storage/* Access-Control-Allow-Origin *
+  header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  header Access-Control-Allow-Headers "Content-Type, Authorization"
+  #   }
+  #   respond !@isPreflight 200 {
+  #       header Access-Control-Allow-Origin *
+  #       header Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  #       header Access-Control-Allow-Headers "Content-Type, Authorization"
+  #   }
+  # }
+
+  # header{
+  #     Access-Control-Allow-Origin *
+  #     Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  #     Access-Control-Allow-Headers "Content-Type, Authorization"
+  # }
+  # Add other Caddy configurations as needed
+}
+
+{$FRONTEND_DOMAIN} {
+  # root * /var/www/public/web
+  reverse_proxy frontend:80
+
+  tls /etc/caddy/certs/yaraamanager.crt /etc/caddy/certs/yaraamanager.key
+
+  # encode gzip
+  # php_fastcgi unix//run/php/php-7.4-fpm.sock
+	# file_server
+  # reverse_proxy laravel:80
+  # Add other Caddy configurations as needed
+}
+
+{$MONGO_DOMAIN} {
+  reverse_proxy mongo-express:8081
+
+  tls /etc/caddy/certs/yaraamanager.crt /etc/caddy/certs/yaraamanager.key
+}

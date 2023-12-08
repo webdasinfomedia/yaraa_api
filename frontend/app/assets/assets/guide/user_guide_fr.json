@@ -1,0 +1,123 @@
+{
+  "title_data" : [
+    {
+      "title_id" : 1,
+      "title_name" : "Projet",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Comment l'utilisateur crée-t-il un nouveau projet ?",
+          "question_answer" : "Dans le tableau de bord, cliquez sur l'icône plus ou accédez à l'onglet projet dans le menu latéral et cliquez sur l'icône plus pour créer un nouveau projet."
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "Comment éditer un projet existant ?",
+          "question_answer" : "Accédez à la page de la liste des projets et l'utilisateur peut voir l'option de modification du projet dans le menu à 3 points."
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "Comment pouvez-vous ajouter des jalons au projet ?",
+          "question_answer" : "Accédez à la page de la liste des projets, cliquez sur un projet particulier, sélectionnez l'onglet Aperçu, l'utilisateur peut voir le bouton Ajouter un jalon."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : "Comment l'utilisateur peut-il copier le lien ?",
+          "question_answer" : "Accédez à la page de la liste des projets et l'utilisateur peut copier le lien à partir du menu à 3 points."
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "Comment l'utilisateur peut-il ajouter une nouvelle tâche à un projet particulier ?",
+          "question_answer" : "Sur la page de la liste des projets, l'utilisateur peut voir le bouton Ajouter une tâche dans la liste des éléments et ajouter l'option de tâche à partir du menu à 3 points."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "Comment ajouter un projet favori et non favori ?",
+          "question_answer" : "Sur la page de la liste des projets, l'utilisateur peut appuyer sur l'icône en forme d'étoile pour ajouter un projet favori et supprimer un projet favori."
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "Comment archiver/supprimer un projet ?",
+          "question_answer" : "Accédez à la page de la liste des projets et l'utilisateur peut voir le projet de suppression à partir du menu à 3 points."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "Comment l'utilisateur peut-il restaurer le projet supprimé ?",
+          "question_answer" : "Accédez à l'onglet Éléments d'archive dans le menu latéral, sélectionnez l'onglet Projet, l'utilisateur peut voir le bouton Restaurer."
+        }
+      ]
+    },
+    {
+      "title_id" : 2,
+      "title_name" : "Tâche",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Comment les utilisateurs créent-ils une nouvelle tâche ?",
+          "question_answer" : "Dans le tableau de bord, cliquez sur l'icône plus ou accédez à l'onglet tâche dans le menu latéral et cliquez sur l'icône plus pour créer une nouvelle tâche."
+        },
+        {
+          "question_id" : 2,
+          "question_title" : "Comment modifier une tâche existante ?",
+          "question_answer" : "Accédez à la page de la liste des tâches et l'utilisateur peut voir la tâche d'édition à partir du menu à 3 points."
+        },
+        {
+          "question_id" : 3,
+          "question_title" : "Comment les utilisateurs peuvent-ils effectuer des tâches ?",
+          "question_answer" : " Accédez à la page de la liste des tâches et l'utilisateur peut voir l'option de tâche complète à partir du menu à 3 points."
+        },
+        {
+          "question_id" : 4,
+          "question_title" : "Comment puis-je supprimer une tâche ?",
+          "question_answer" : "Accédez à la page de la liste des tâches et l'utilisateur peut voir l'option de suppression de tâche dans le menu à 3 points."
+        },
+        {
+          "question_id" : 5,
+          "question_title" : "Comment copier la tâche ?",
+          "question_answer" : "Accédez à la page de la liste des tâches et l'utilisateur peut copier le lien à partir du menu à 3 points."
+        },
+        {
+          "question_id" : 6,
+          "question_title" : "Comment les utilisateurs peuvent-ils déplacer des tâches ?",
+          "question_answer" : "Accédez à la page de la liste des tâches et l'utilisateur peut passer du menu à 3 points"
+        },
+        {
+          "question_id" : 7,
+          "question_title" : "Comment l'utilisateur peut-il ajouter une sous-tâche ?",
+          "question_answer" : "Accédez à la page de la liste des tâches, cliquez sur une tâche particulière, l'utilisateur peut ajouter une sous-tâche en cliquant sur l'icône plus."
+        },
+        {
+          "question_id" : 8,
+          "question_title" : "Comment l'utilisateur peut-il démarrer, arrêter, mettre en pause le chronomètre pour une tâche particulière ?",
+          "question_answer" : "Accédez à la page de la liste des tâches, cliquez sur une tâche particulière, l'utilisateur peut démarrer, arrêter, mettre en pause le chronomètre en cliquant sur l'icône du chronomètre."
+        },
+        {
+          "question_id" : 9,
+          "question_title" : "Comment pouvez-vous ajouter des jalons à la tâche ?",
+          "question_answer" : "L'utilisateur peut ajouter un jalon lors de l'ajout d'une tâche et de la modification de l'heure de la tâche, sélectionnez le projet, puis l'utilisateur peut sélectionner le jalon disponible dans le projet."
+        }
+      ]
+    },
+    {
+      "title_id" : 3,
+      "title_name" : "Membre",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Comment les utilisateurs peuvent-ils inviter des membres pour des projets, des tâches et des équipes ?",
+          "question_answer" : "Cliquez sur un membre de l'équipe à partir du lien et l'utilisateur peut voir l'icône plus pour ajouter un membre de l'équipe."
+        }
+      ]
+    },
+    {
+      "title_id" : 4,
+      "title_name" : "Profil",
+      "question_list": [
+        {
+          "question_id" : 1,
+          "question_title" : "Comment les utilisateurs peuvent-ils modifier les profils ?",
+          "question_answer" : "Cliquez sur l'icône du profil utilisateur, l'utilisateur peut voir l'écran du profil et modifier le profil."
+        }
+      ]
+    }
+  ]
+}
