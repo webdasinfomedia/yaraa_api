@@ -25,8 +25,8 @@ services:
     volumes:
       - /var/www/html/vendor
       - /var/www/html/public/storage
-      - ./api/app:/var/www/html
-      - ./api/logs:/logs
+      - ./app/api:/var/www/html
+      - ./app/logs:/logs
     environment:
       - MONGO_DB_HOST=mongodb
     # command: sh -c "chmod -R 777 /var/www/html/storage/logs"
