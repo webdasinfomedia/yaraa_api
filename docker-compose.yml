@@ -11,9 +11,10 @@ services:
       - ./caddy_config:/config
       - ./certs:/etc/caddy/certs
     environment:
-      - FRONTEND_DOMAIN=${FRONTEND_DOMAIN}
       - API_DOMAIN=${API_DOMAIN}
       - MONGO_DOMAIN=${MONGO_DOMAIN}
+      - API_SSL=${API_SSL}
+      - MONGOUI_SSL=${MONGOUI_SSL}
     networks:
       - internal_network
   api:
