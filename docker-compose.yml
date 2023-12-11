@@ -51,7 +51,7 @@ services:
     # ports:
     # - "8081:8081"
     depends_on:
-      - mongo
+      - mongodb
     environment:
       # - ME_CONFIG_MONGODB_ADMINUSERNAME=root
       # - ME_CONFIG_MONGODB_ADMINPASSWORD=example
