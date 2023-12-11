@@ -11,7 +11,7 @@
     }
   }
 
-  tls /etc/caddy/certs/yaraamanager.crt /etc/caddy/certs/yaraamanager.key
+  tls /etc/caddy/certs/{$API_SSL}.crt /etc/caddy/certs/{$API_SSL}.key
 
     # respond @isPreflight 200 {
   header /storage/* Access-Control-Allow-Origin *
@@ -33,21 +33,8 @@
   # Add other Caddy configurations as needed
 }
 
-{$FRONTEND_DOMAIN} {
-  # root * /var/www/public/web
-  reverse_proxy frontend:80
-
-  tls /etc/caddy/certs/yaraamanager.crt /etc/caddy/certs/yaraamanager.key
-
-  # encode gzip
-  # php_fastcgi unix//run/php/php-7.4-fpm.sock
-	# file_server
-  # reverse_proxy laravel:80
-  # Add other Caddy configurations as needed
-}
-
 {$MONGO_DOMAIN} {
   reverse_proxy mongo-express:8081
 
-  tls /etc/caddy/certs/yaraamanager.crt /etc/caddy/certs/yaraamanager.key
+  tls /etc/caddy/certs/{$MONGOUI_SSL}.crt /etc/caddy/certs/{$MONGOUI_SSL}.key
 }
