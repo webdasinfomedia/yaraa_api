@@ -60,15 +60,6 @@ services:
       # - ME_CONFIG_BASICAUTH_PASSWORD=admin #mongo-express login credentials
     networks:
       - internal_network
-
-  frontend:
-    build:
-      context: ./frontend
-    volumes:
-      - ./frontend/app:/usr/share/nginx/html
-    # Add other Flutter environment variables as needed
-    networks:
-      - internal_network
 networks:
   internal_network:
     driver: bridge
