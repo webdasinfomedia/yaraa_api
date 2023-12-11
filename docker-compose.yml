@@ -18,7 +18,7 @@ services:
       - internal_network
   api:
     build:
-      context: ./api
+      context: ./app
     depends_on:
       - mongodb
     # user: 1000:1000
