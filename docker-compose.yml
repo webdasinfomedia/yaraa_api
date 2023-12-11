@@ -51,9 +51,10 @@ services:
     depends_on:
       - mongo
     environment:
-      # - ME_CONFIG_MONGODB_ADMINUSERNAME=root
-      # - ME_CONFIG_MONGODB_ADMINPASSWORD=example
-      - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017/
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=${MONGO_USER}
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_PASS}
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      # - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017/
       # - ME_CONFIG_BASICAUTH_USERNAME=admin #mongo-express login credentials
       # - ME_CONFIG_BASICAUTH_PASSWORD=admin #mongo-express login credentials
     networks:
