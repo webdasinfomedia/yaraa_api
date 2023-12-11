@@ -16,7 +16,7 @@ services:
       - MONGO_DOMAIN=${MONGO_DOMAIN}
     networks:
       - internal_network
-  laravel:
+  api:
     build:
       context: ./api
     depends_on:
@@ -33,9 +33,8 @@ services:
     # command: sh -c "chmod -R 777 /var/log/supervisor && php-fpm"
     networks:
       - internal_network
-  mongo:
+  mongodb:
     image: mongo:5.0.6
-    container_name: mongo
     # ports:
     # - "27017:27017"
     volumes:
