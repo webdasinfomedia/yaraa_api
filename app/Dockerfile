@@ -6,7 +6,7 @@ FROM php:7.4-fpm
 RUN apt-get update && apt-get install -y --no-install-recommends apt-utils
 
 # COPY app/composer.* ./
-COPY app/. .
+COPY api/. .
 
 # Update packages & Install Git and Supervisor
 RUN apt-get update -y
