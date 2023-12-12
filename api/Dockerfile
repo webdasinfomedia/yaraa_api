@@ -11,6 +11,8 @@ COPY app/. .
 # Update packages & Install Git and Supervisor
 RUN apt-get update -y
 RUN apt-get install -yq \
+    build-essential \
+    libssl-dev \
     git \
     supervisor \
     zlib1g-dev \
