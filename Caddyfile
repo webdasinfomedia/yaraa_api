@@ -3,7 +3,7 @@
   # encode gzip
   php_fastcgi unix//run/php/php-7.4-fpm.sock
 	file_server
-  reverse_proxy laravel:8000
+  reverse_proxy api:8000
 
   handle_errors {
     @isPreflight {
@@ -13,28 +13,19 @@
 
   tls /etc/caddy/certs/{$API_SSL}.crt /etc/caddy/certs/{$API_SSL}.key
 
-    # respond @isPreflight 200 {
   header /storage/* Access-Control-Allow-Origin *
   header Access-Control-Allow-Methods "GET, POST, OPTIONS"
   header Access-Control-Allow-Headers "Content-Type, Authorization"
-  #   }
-  #   respond !@isPreflight 200 {
-  #       header Access-Control-Allow-Origin *
-  #       header Access-Control-Allow-Methods "GET, POST, OPTIONS"
-  #       header Access-Control-Allow-Headers "Content-Type, Authorization"
-  #   }
-  # }
-
-  # header{
-  #     Access-Control-Allow-Origin *
-  #     Access-Control-Allow-Methods "GET, POST, OPTIONS"
-  #     Access-Control-Allow-Headers "Content-Type, Authorization"
-  # }
-  # Add other Caddy configurations as needed
 }
 
 {$MONGO_DOMAIN} {
   reverse_proxy mongo-express:8081
 
   tls /etc/caddy/certs/{$MONGOUI_SSL}.crt /etc/caddy/certs/{$MONGOUI_SSL}.key
+}
+
+{$FRONTEND_DOMAIN} {
+  reverse_proxy frontend:80
+
+  tls /etc/caddy/certs/{$FRONTEND_SSL}.crt /etc/caddy/certs/{$FRONTEND_SSL}.key
 }
