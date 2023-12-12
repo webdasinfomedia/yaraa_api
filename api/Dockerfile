@@ -24,7 +24,7 @@ RUN apt-get install -yq \
     unzip
 
 # Install Predis extension for PHP
-RUN pecl install redis && docker-php-ext-enable redis
+# RUN pecl install redis && docker-php-ext-enable redis
 
 # Install GD extension
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/

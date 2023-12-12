@@ -130,7 +130,7 @@ $app->register(\SocialiteProviders\Manager\ServiceProvider::class);
 $app->register(Illuminate\Mail\MailServiceProvider::class);
 $app->register(Jenssegers\Mongodb\MongodbQueueServiceProvider::class);
 $app->register(App\Providers\BroadcastServiceProvider::class);
-$app->register(Illuminate\Redis\RedisServiceProvider::class);
+// $app->register(Illuminate\Redis\RedisServiceProvider::class);
 $app->register(App\Providers\TenancyProvider::class);
 /*
 |--------------------------------------------------------------------------
