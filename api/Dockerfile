@@ -23,6 +23,10 @@ RUN apt-get install -yq \
     zip \
     unzip
 
+# Install Predis extension for PHP
+RUN pecl install redis &&
+    docker-php-ext-enable redis
+
 # Install GD extension
 RUN docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/
 RUN docker-php-ext-install -j "$(nproc)" gd pcntl pdo_mysql
