@@ -20,8 +20,8 @@ class UserBasicResource extends JsonResource
             'about_me' => $this->about_me,
             'designation' => $this->designation,
             'role' => ($this->role) ? $this->role->slug : null,
-            'image' => $this->image ? url('storage/' . $this->image, true) : null,
-            'image_thumb' => $this->image_48x48 ? url('storage/' . $this->image_48x48, true) : null,
+            'image' => $this->image ? url('storage/' . $this->image, [], true) : null,
+            'image_thumb' => $this->image_48x48 ? url('storage/' . $this->image_48x48, [], true) : null,
             'is_admin' => $this->isAdmin()
         ];
     }
