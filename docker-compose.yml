@@ -30,6 +30,9 @@ services:
       - /var/www/html/public/storage
       - ./api/app:/var/www/html
       - ./api/logs:/logs
+      - type: bind
+        source: ./api/app/storage/app/public/
+        target: /var/www/html/public/storage/
     environment:
       - MONGO_DB_HOST=mongo
     # command: sh -c "chmod -R 777 /var/www/html/storage/logs"
