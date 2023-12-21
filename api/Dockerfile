@@ -43,7 +43,7 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-RUN ln -s /var/www/html/storage/app/public /var/www/html/public/storage
+# RUN ln -s /var/www/html/storage/app/public /var/www/html/public/storage
 
 # Added supervisor config
 COPY supervisord.conf /etc/supervisor/conf.d/supervisor.conf
