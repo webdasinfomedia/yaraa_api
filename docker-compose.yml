@@ -58,8 +58,8 @@ services:
   mongo-express:
     image: mongo-express:0.54
     container_name: mongogui
-    # ports:
-    # - "8081:8081"
+    ports:
+      - "81:8081"
     depends_on:
       - mongo
     environment:
@@ -67,8 +67,8 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=${MONGO_ROOT_PASSWORD}
       - ME_CONFIG_MONGODB_SERVER=mongo
       # - ME_CONFIG_MONGODB_URL=mongodb://mongo:27017/
-      # - ME_CONFIG_BASICAUTH_USERNAME=admin #mongo-express login credentials
-      # - ME_CONFIG_BASICAUTH_PASSWORD=admin #mongo-express login credentials
+      - ME_CONFIG_BASICAUTH_USERNAME=${MONGO_UI_USER} #mongo-express login credentials
+      - ME_CONFIG_BASICAUTH_PASSWORD=${MONGO_UI_PASSWORD} #mongo-express login credentials
     networks:
       - internal_network
 
