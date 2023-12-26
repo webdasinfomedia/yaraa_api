@@ -13,6 +13,7 @@ services:
       - ./caddy_config:/config
       - ./certs:/etc/caddy/certs
     environment:
+      - FRONTEND_ADMIN_DOMAIN=${FRONTEND_ADMIN_DOMAIN}
       - FRONTEND_DOMAIN=${FRONTEND_DOMAIN}
       - API_DOMAIN=${API_DOMAIN}
       - MONGO_DOMAIN=${MONGO_DOMAIN}
@@ -81,7 +82,8 @@ services:
     build:
       context: ./frontend
     volumes:
-      - ./frontend/app:/usr/share/nginx/html
+      - ./frontend/app:/usr/share/nginx/html/web
+      - ./frontend/admin:/usr/share/nginx/html/admin
     # Add other Flutter environment variables as needed
     networks:
       - internal_network

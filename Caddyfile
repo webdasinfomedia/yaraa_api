@@ -29,3 +29,9 @@
 
   tls /etc/caddy/certs/frontend.crt /etc/caddy/certs/frontend.key
 }
+
+{$FRONTEND_ADMIN_DOMAIN} {
+  reverse_proxy frontend:8080
+
+  tls /etc/caddy/certs/frontend.crt /etc/caddy/certs/frontend.key
+}
