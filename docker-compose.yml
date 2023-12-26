@@ -2,7 +2,7 @@ version: "3"
 services:
   caddy:
     image: caddy:2
-    container_name: gateway
+    container_name: ${GATEWAY_CONTAINER_NAME}
     ports:
       - "80:80"
       - "81:81"
@@ -20,7 +20,7 @@ services:
     networks:
       - internal_network
   api:
-    container_name: api
+    container_name: ${API_CONTAINER_NAME}
     build:
       context: ./api
     depends_on:
@@ -42,7 +42,7 @@ services:
       - internal_network
   mongo:
     image: mongo:5.0.6
-    container_name: mongo
+    container_name: ${MONGO_CONTAINER_NAME}
     # build:
     #   context: ./mongo
     #   args:
@@ -62,7 +62,7 @@ services:
       - internal_network
   mongo-express:
     image: mongo-express:0.54
-    container_name: mongogui
+    container_name: ${MONGOGUI_CONTAINER_NAME}
     # ports:
     #   - "81:8081"
     depends_on:
@@ -78,7 +78,7 @@ services:
       - internal_network
 
   frontend:
-    container_name: frontend
+    container_name: ${FRONTEND_CONTAINER_NAME}
     build:
       context: ./frontend
     volumes:
