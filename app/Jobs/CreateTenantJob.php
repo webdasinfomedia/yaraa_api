@@ -61,7 +61,9 @@ class CreateTenantJob extends Job
         }
 
         //3.create database for tenant
-        $client = new \MongoDB\Client("mongodb://admin:" . env('DB_PASSWORD') . "@127.0.0.1:27017");
+        $connectionString = "mongodb://" . env('DB_USERNAME') . ":" . env('DB_PASSWORD') . "@" . env('DB_HOST') . ":" . env('DB_PORT') . "";
+        // $client = new \MongoDB\Client("mongodb://admin:" . env('DB_PASSWORD') . "@127.0.0.1:27017");
+        $client = new \MongoDB\Client($connectionString);
         $db = $client->{$tenantDatabase};
         $db->createCollection('test');
 
