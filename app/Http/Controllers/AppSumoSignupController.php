@@ -71,7 +71,8 @@ class AppSumoSignupController extends Controller
             }
 
             //3.create database for tenant
-            $client = new \MongoDB\Client("mongodb://admin:" . env('DB_PASSWORD') . "@127.0.0.1:27017");
+            $connectionString = "mongodb://" . env('DB_USERNAME') . ":" . env('DB_PASSWORD') . "@" . env('DB_HOST') . ":" . env('DB_PORT') . "";
+            $client = new \MongoDB\Client($connectionString);
             $db = $client->{$tenantDatabase};
             $db->createCollection('test');
 
@@ -92,7 +93,7 @@ class AppSumoSignupController extends Controller
             $image_resize = Image::make(Storage::path($path));
             $image_resize->resize(48, 48); //before 60x60
             $fileFullName = $imageName;
-            $fileName = str_replace(' ', '_', pathinfo($fileFullName, PATHINFO_FILENAME)) .  getUniqueStamp() . '_48x48.' .  'png';
+            $fileName = str_replace(' ', '_', pathinfo($fileFullName, PATHINFO_FILENAME)) . getUniqueStamp() . '_48x48.' . 'png';
             $image_resize->save(base_path('public/storage/user_images/' . $fileName), 60);
 
             $user = User::create([

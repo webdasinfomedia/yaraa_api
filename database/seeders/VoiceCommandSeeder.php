@@ -21,7 +21,8 @@ class VoiceCommandSeeder extends Seeder
 
         //     /** Bulk insert into db **/
         //     // $mongoClient = new Client();
-        //     $mongoClient = new \MongoDB\Client("mongodb://admin:" . env('DB_PASSWORD') . "@127.0.0.1:27017");
+        //     $connectionString = "mongodb://" . env('DB_USERNAME') . ":" . env('DB_PASSWORD') . "@" . env('DB_HOST') . ":" . env('DB_PORT') . "";
+        //     $client = new \MongoDB\Client($connectionString);
         //     $db = app()->tenant->database;
         //     $collection = $mongoClient->{$db}->{'voice_commands'};
         //     $collection->insertMany($data);
