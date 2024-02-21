@@ -775,6 +775,9 @@ class ProjectController extends Controller
                     $project = Project::create([
                         'name' => $data[0],
                         'description' => $data[1],
+                        'visibility' => "private",
+                        'board_view' => "overview",
+                        'status' => "pending",
                     ]);
 
                     $emails = explode(",", $data[2]);
