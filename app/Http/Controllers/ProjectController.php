@@ -771,16 +771,23 @@ class ProjectController extends Controller
                 $file = fopen($csvFile, 'r');
 
                 fgetcsv($file); // to skip first row
-                while (($data = fgetcsv($file, 100, ",")) !== FALSE) {
-                    $project = Project::create([
+                while (($data = fgetcsv($file, 10000, ",")) !== FALSE) {
+                    $status = !empty($data[4]) ? "completed" : "pending";
+                    $projectData = [
                         'name' => $data[0],
                         'description' => $data[1],
-                        'visibility' => "private",
-                        'board_view' => "overview",
-                        'status' => "pending",
-                    ]);
+                        'visibility' => $data[2],
+                        'board_view' => $data[3],
+                        'status' => $status,
+                    ];
 
-                    $emails = explode(",", $data[2]);
+                    if (!empty($data[4])) {
+                        $projectData['end_date'] = $data[4];
+                    }
+
+                    $project = Project::create($projectData);
+
+                    $emails = explode(",", $data[5]);
                     $emails[] = $project->owner->email;
 
                     foreach ($emails as $email) {
