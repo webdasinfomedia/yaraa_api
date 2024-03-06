@@ -42,6 +42,26 @@ class TaskController extends Controller
 
                 fgetcsv($file); // to skip first row
                 while (($data = fgetcsv($file, 10000, ",")) !== FALSE) {
+
+                    $due_date = $data[5];
+                    $end_date = $data[7];
+
+                    // If due_date is not available, add a day to the current date
+                    if (!$due_date) {
+                        $currentDate = Carbon::now();
+                        $due_date = $currentDate->addDay();
+                    }
+
+                    // For task status
+                    $status = "pending";
+                    if ($end_date != null) {
+                        if (strtotime($end_date) < strtotime($due_date)) {
+                            $status = "completed";
+                        } else {
+                            $status = "delayed";
+                        }
+                    }
+
                     $task = Task::create([
                         'project_id' => $data[0],
                         'name' => $data[1],
@@ -51,9 +71,10 @@ class TaskController extends Controller
                         'created_by' => Auth::user()->id,
                         'assigned_by' => Auth::user()->email,
                         'reminder' => false,
-                        'status' => "pending",
                         // 'priority' => $data[7],
                         'priority' => "high",
+                        'due_date' => $due_date,
+                        'status' => $status,
                     ]);
 
                     // Check if project is exists or not
@@ -70,19 +91,6 @@ class TaskController extends Controller
                         $task->start_date = $start_date;
                     } else {
                         $task->start_date = null;
-                    }
-
-                    // For due_date
-                    $end_date = $data[5];
-                    if ($end_date) {
-                        $task->due_date = $end_date;
-                    } else {
-                        $currentDate = Carbon::now();
-                        $dueDate = $currentDate->addDay();
-                        $formattedDueDate = $dueDate->format('Y-m-d h:i A');
-                        $date = Carbon::createFromFormat('Y-m-d H:i A', $formattedDueDate, getUserTimezone());
-                        $date->setTimezone('UTC');
-                        $task->due_date = $date;
                     }
 
                     //add assign members to task
