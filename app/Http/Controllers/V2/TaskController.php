@@ -44,7 +44,7 @@ class TaskController extends Controller
                 while (($data = fgetcsv($file, 10000, ",")) !== FALSE) {
 
                     $due_date = $data[5];
-                    $end_date = $data[7];
+                    $end_date = $data[7] !== "" ? $data[7] : null;
 
                     // If due_date is not available, add a day to the current date
                     if (!$due_date) {
@@ -75,6 +75,7 @@ class TaskController extends Controller
                         'priority' => "high",
                         'due_date' => $due_date,
                         'status' => $status,
+                        'end_date' => $end_date,
                     ]);
 
                     // Check if project is exists or not
