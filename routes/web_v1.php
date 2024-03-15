@@ -77,19 +77,6 @@ $router->group(['prefix' => 'assets', 'middleware' => 'cors'], function ($router
 
 $router->post('stripe/webhook', 'StripeWebhookController@handleWebhook');
 
-$router->options('{all}', function () {
-    // $response = Response::make('');
-    $headers = [
-        'Access-Control-Allow-Origin' => '*',
-        'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
-        'Access-Control-Allow-Credentials' => 'true',
-        'Access-Control-Max-Age' => '86400',
-        'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With, Access-Control-Request-Method'
-    ];
-    return response()->json('{"method":"OPTIONS"}', 200, $headers);
-});
-
-
 $router->group(['prefix' => 'api'], function ($router) {
 
     $router->post('/password/email', 'PasswordController@sendResetLinkEmail');
