@@ -18,7 +18,6 @@ use Jose\Component\Signature\Algorithm\ES256;
 use Jose\Component\Signature\JWSBuilder;
 use Jose\Component\Signature\Serializer\CompactSerializer;
 use Stripe\StripeClient;
-use Illuminate\Http\Response;
 
 /*
 |--------------------------------------------------------------------------
@@ -80,16 +79,14 @@ $router->post('stripe/webhook', 'StripeWebhookController@handleWebhook');
 
 Route::options('{all}', function () {
     $response = Response::make('');
-    // if (!empty ($_SERVER['HTTP_ORIGIN']) && in_array($_SERVER['HTTP_ORIGIN'], ['http://localhost:3000'])) {
-    //     $response->header('Access-Control-Allow-Origin', $_SERVER['HTTP_ORIGIN']);
-    // } else {
-    // }
-    $response->header('Access-Control-Allow-Origin', '*');
-    $response->header('Access-Control-Allow-Headers', 'Origin, Content-Type, Accept, Authorization');
-    $response->header('Access-Control-Allow-Methods', 'POST, GET, OPTIONS, PUT, DELETE');
-    $response->header('Access-Control-Allow-Credentials', 'true');
-    $response->header('X-Content-Type-Options', 'nosniff');
-    return $response;
+    $headers = [
+        'Access-Control-Allow-Origin' => '*',
+        'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
+        'Access-Control-Allow-Credentials' => 'true',
+        'Access-Control-Max-Age' => '86400',
+        'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With, Access-Control-Request-Method'
+    ];
+    return response()->json('{"method":"OPTIONS"}', 200, $headers);
 })->where('all', '.*');
 
 
