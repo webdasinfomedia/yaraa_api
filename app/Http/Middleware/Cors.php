@@ -29,9 +29,9 @@ class Cors
             'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With,Access-Control-Allow-Headers'
         ];
 
-        // if ($request->isMethod('OPTIONS')) {
-        //     return response()->json('{"method":"OPTIONS"}', 200, $headers);
-        // }
+        if ($request->isMethod('OPTIONS')) {
+            return response()->json('{"method":"OPTIONS"}', 200);
+        }
 
         $response = $next($request);
         foreach ($headers as $key => $value) {
