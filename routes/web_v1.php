@@ -150,7 +150,7 @@ $router->group(['prefix' => 'api'], function ($router) {
 
         $router->group(["prefix" => "marketplace"], function ($router) {
             $router->post('add/zoom', 'AuthController@getZoomAccessToken');
-            $router->get('remove/zoom', 'SettingsController@removeZoomApp');
+            $router->delete('remove/zoom', 'SettingsController@removeZoomApp');
         });
 
         $router->group(["prefix" => "settings"], function ($router) {
@@ -174,7 +174,7 @@ $router->group(['prefix' => 'api'], function ($router) {
             $router->post('organizations/switch', 'OrganizationController@switchOrganization');
             $router->post('location', 'LogLocationController@store');
             $router->post('live-location', 'LogLocationController@getLocation');
-            $router->get('account', 'UserController@deleteUser');
+            $router->delete('account', 'UserController@deleteUser');
         });
 
         /** Role module Routes ***/
@@ -247,7 +247,7 @@ $router->group(['prefix' => 'api'], function ($router) {
             $router->post('invite/member', 'TeamController@inviteMember');
             $router->post('user/disable', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@disableUser']);
             $router->post('user/enable', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@enableUser']);
-            $router->get('/user/delete/{email}', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@deleteUser']);
+            $router->delete('user/delete/{email}/user', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@deleteUser']);
         });
 
         $router->group(['prefix' => "member"], function ($router) {
@@ -314,7 +314,7 @@ $router->group(['prefix' => 'api'], function ($router) {
             $router->post('clear/messages', 'MessageController@clearMessages');
             $router->post('group_details', 'ConversationController@groupDetails');
             $router->post('conversation/clean', 'ConversationController@cleanConversation');
-            $router->get('group/{groupId}', 'ConversationController@deleteConversation');
+            $router->delete('group/{groupId}', 'ConversationController@deleteConversation');
         });
 
         $router->group(['prefix' => 'customer'], function ($router) {
@@ -340,13 +340,13 @@ $router->group(['prefix' => 'api'], function ($router) {
             $router->post('update-module', 'VoiceCommandModuleController@updateModule');
             $router->post('create-sub-module', 'VoiceCommandModuleController@createSubModule');
             $router->post('update-sub-module', 'VoiceCommandModuleController@updateSubModule');
-            $router->get('module/{id}', 'VoiceCommandModuleController@deleteModule');
-            $router->get('sub-module/{id}', 'VoiceCommandModuleController@deleteSubModule');
+            $router->delete('module/{id}', 'VoiceCommandModuleController@deleteModule');
+            $router->delete('sub-module/{id}', 'VoiceCommandModuleController@deleteSubModule');
             #####
             $router->post('add-voice-command', 'VoiceCommandController@store');
             $router->get('voice-commands', 'VoiceCommandController@getCommandList');
             $router->post('update-command', 'VoiceCommandController@update');
-            $router->get('command/{id}', 'VoiceCommandController@deleteCommand');
+            $router->delete('command/{id}', 'VoiceCommandController@deleteCommand');
             $router->get('updated/history', 'VoiceCommandController@getUpdateHistory');
         });
 
