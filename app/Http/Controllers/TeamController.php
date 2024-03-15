@@ -156,11 +156,13 @@ class TeamController extends Controller
         }
     }
 
-    public function deleteUser($email)
+    public function deleteUser(Request $request)
     {
-        $validator = Validator::make(['email' => $email], [
+        $validator = Validator::make($request->all(), [
             'email' => 'email|exists:users,email',
         ]);
+
+        $email = $request->email;
 
         if ($validator->fails()) {
             $this->setResponse(true, $validator->errors()->all());
