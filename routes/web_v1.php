@@ -77,8 +77,8 @@ $router->group(['prefix' => 'assets', 'middleware' => 'cors'], function ($router
 
 $router->post('stripe/webhook', 'StripeWebhookController@handleWebhook');
 
-Route::options('{all}', function () {
-    $response = Response::make('');
+$router->options('{all}', function () {
+    // $response = Response::make('');
     $headers = [
         'Access-Control-Allow-Origin' => '*',
         'Access-Control-Allow-Methods' => 'POST, GET, OPTIONS, PUT, DELETE',
@@ -87,7 +87,7 @@ Route::options('{all}', function () {
         'Access-Control-Allow-Headers' => 'Content-Type, Authorization, X-Requested-With, Access-Control-Request-Method'
     ];
     return response()->json('{"method":"OPTIONS"}', 200, $headers);
-})->where('all', '.*');
+});
 
 
 $router->group(['prefix' => 'api'], function ($router) {
