@@ -242,12 +242,12 @@ $router->group(['prefix' => 'api'], function ($router) {
             $router->post('mark/important/remove', 'TaskCommentController@markAsUnimportant');
         });
 
-        $router->group(['prefix' => 'team'], function ($router) {
+        $router->group(['prefix' => '/team'], function ($router) {
             $router->post('create', 'TeamController@store');
             $router->post('invite/member', 'TeamController@inviteMember');
             $router->post('user/disable', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@disableUser']);
             $router->post('user/enable', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@enableUser']);
-            $router->delete('user/delete/{email}', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@deleteUser']);
+            $router->delete('/user/delete/{email}', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@deleteUser']);
         });
 
         $router->group(['prefix' => "member"], function ($router) {
