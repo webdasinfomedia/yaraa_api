@@ -112,7 +112,7 @@ class UserDeleteEventListener
 
         $taskComments->each(function ($comment) use ($user) {
             $locations = json_decode($comment->details, true);
-            if (!empty($locations)) {
+            if (!empty ($locations)) {
                 $filtered = Arr::where($locations, function ($locations) use ($user) {
                     return $locations['email'] != $user->email;
                 });
@@ -153,7 +153,7 @@ class UserDeleteEventListener
                 if ($group->created_by == $user->id) {
                     $members = $group->members->pluck('id')->toArray();
                     $key = array_search($user->id, $members);
-                    unset($members[$key]);
+                    unset ($members[$key]);
                     $members = array_values($members);
                     $group->created_by = $members[0];
                     $group->save();
@@ -166,10 +166,12 @@ class UserDeleteEventListener
             if ($conversation->created_by == $user->id) {
                 $members = $conversation->members->pluck('id')->toArray();
                 $key = array_search($user->id, $members);
-                unset($members[$key]);
+                unset ($members[$key]);
                 $members = array_values($members);
-                $conversation->created_by = $members[0];
-                $conversation->save();
+                if (sizeof($members) > 0) {
+                    $conversation->created_by = $members[0];
+                    $conversation->save();
+                }
             }
             $user->conversations()->detach($conversation->id);
         });
@@ -245,9 +247,9 @@ class UserDeleteEventListener
 
             $members = $task->assignedTo->pluck('id')->toArray();
 
-            if ($task->created_by == $user->id  && sizeof($members) > 1) {
+            if ($task->created_by == $user->id && sizeof($members) > 1) {
                 $key = array_search($user->id, $members);
-                unset($members[$key]);
+                unset ($members[$key]);
                 $members = array_values($members);
                 $task->created_by = $members[0];
                 $task->save();
@@ -268,7 +270,7 @@ class UserDeleteEventListener
             if ($project->created_by == $user->id) {
                 $members = $project->members->pluck('id')->toArray();
                 $key = array_search($user->id, $members);
-                unset($members[$key]);
+                unset ($members[$key]);
                 $members = array_values($members);
                 $project->created_by = $members[0];
                 $project->save();
