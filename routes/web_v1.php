@@ -247,7 +247,7 @@ $router->group(['prefix' => 'api'], function ($router) {
             $router->post('invite/member', 'TeamController@inviteMember');
             $router->post('user/disable', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@disableUser']);
             $router->post('user/enable', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@enableUser']);
-            $router->delete('user/delete/{email}', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@deleteUser']);
+            $router->post('user/delete', ['middleware' => 'checkAdminRole', 'uses' => 'TeamController@deleteUser']);
         });
 
         $router->group(['prefix' => "member"], function ($router) {

@@ -21,6 +21,9 @@ $router->group(['prefix' => 'api/v2', 'namespace' => 'V2'], function ($router) {
         $router->group(['prefix' => 'project'], function ($router) {
             $router->post('list', 'AllProjectController@index');
         });
+        $router->group(['prefix' => 'task'], function ($router) {
+            $router->post('csv/import', 'TaskController@csvImport');
+        });   
     });
 
     $router->group(['middleware' => 'auth:admin-api'], function ($router) {

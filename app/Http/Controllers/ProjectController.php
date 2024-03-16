@@ -771,13 +771,38 @@ class ProjectController extends Controller
                 $file = fopen($csvFile, 'r');
 
                 fgetcsv($file); // to skip first row
-                while (($data = fgetcsv($file, 100, ",")) !== FALSE) {
+                while (($data = fgetcsv($file, 10000, ",")) !== FALSE) {
+
+                    $due_date = $data[4];
+                    $end_date = $data[6];
+                    
+                    // If due_date is not available, add a day to the current date
+                    if (!$due_date) {
+                        $currentDate = Carbon::now();
+                        $due_date = $currentDate->addDay();
+                    }
+
+                    // For project status
+                    $status = "pending";
+                    if ($end_date != null) {
+                        if (strtotime($end_date) < strtotime($due_date)) {
+                            $status = "completed";
+                        } else {
+                            $status = "delayed";
+                        }
+                    }
+
                     $project = Project::create([
                         'name' => $data[0],
                         'description' => $data[1],
+                        'visibility' => $data[2],
+                        'board_view' => $data[3],
+                        'status' => $status,
+                        'due_date' => $due_date,
+                        'end_date' => $end_date,
                     ]);
 
-                    $emails = explode(",", $data[2]);
+                    $emails = explode(",", $data[5]);
                     $emails[] = $project->owner->email;
 
                     foreach ($emails as $email) {
