@@ -41,7 +41,7 @@ class Kernel extends ConsoleKernel
         $schedule->command(\App\Console\Commands\CreateRecurringTask::class)->daily();
         $schedule->command(\App\Console\Commands\CreateRecurringTodo::class)->daily();
         $schedule->command(\App\Console\Commands\DeleteEmptyMemberTasksCommand::class)->daily();
-        $schedule->command(\App\Console\Commands\AutoPunchOutEodCommand::class)->everyTwoMinutes();
+        $schedule->command(\App\Console\Commands\AutoPunchOutEodCommand::class)->dailyAt('23:15');
         $schedule->command(\App\Console\Commands\TaskDueReminder24HourBeforeCommand::class)->everyTenMinutes();
     }
 }
