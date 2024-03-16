@@ -70,13 +70,15 @@ class AutoPunchOutEodCommand extends Command
                         $punchRecord->punch_out = $endHour;
                         $punchRecord->total_work_hour = $diff;
                         $punchRecord->save();
+                    }
+                }
 
-                        /** Update user preference to handel frontend use case **/
-                        if ($user->preferences != null) {
-                            $user->preferences->update(["punch_details" => "punch_out"]);
-                        } else {
-                            $user->preferences()->create(["punch_details" => "punch_out"]);
-                        }
+                /** Update user preference to handel frontend use case **/
+                if ($now->hour == 23 && $now->minute > 54) {
+                    if ($user->preferences != null) {
+                        $user->preferences->update(["punch_details" => "punch_out"]);
+                    } else {
+                        $user->preferences()->create(["punch_details" => "punch_out"]);
                     }
                 }
             });
