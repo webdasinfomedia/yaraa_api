@@ -155,8 +155,10 @@ class UserDeleteEventListener
                     $key = array_search($user->id, $members);
                     unset ($members[$key]);
                     $members = array_values($members);
-                    $group->created_by = $members[0];
-                    $group->save();
+                    if (sizeof($members) > 0) {
+                        $group->created_by = $members[0];
+                        $group->save();
+                    }
                 }
                 $group->members()->detach($user->id);
             }
@@ -251,8 +253,10 @@ class UserDeleteEventListener
                 $key = array_search($user->id, $members);
                 unset ($members[$key]);
                 $members = array_values($members);
-                $task->created_by = $members[0];
-                $task->save();
+                if (sizeof($members) > 0) {
+                    $task->created_by = $members[0];
+                    $task->save();
+                }
             }
 
             $task->assignedTo()->detach($user);
@@ -272,14 +276,17 @@ class UserDeleteEventListener
                 $key = array_search($user->id, $members);
                 unset ($members[$key]);
                 $members = array_values($members);
-                $project->created_by = $members[0];
-                $project->save();
+                if (sizeof($members) > 0) {
+                    $project->created_by = $members[0];
+                    $project->save();
 
-                /** Make sure new owner has can edit role */
-                ProjectRole::updateOrCreate(
-                    ["project_id" => $project->id, "user_id" => $members[0]],
-                    ["role" => Project::CAN_EDIT]
-                );
+
+                    /** Make sure new owner has can edit role */
+                    ProjectRole::updateOrCreate(
+                        ["project_id" => $project->id, "user_id" => $members[0]],
+                        ["role" => Project::CAN_EDIT]
+                    );
+                }
             }
 
             $project->members()->detach($user);
@@ -325,8 +332,10 @@ class UserDeleteEventListener
             $key = array_search(app('tenant')->id, $tenants);
             unset($tenants[$key]);
             $tenants = array_values($tenants);
-            $slaveUser->default_tenant = $tenants[0];
-            $slaveUser->save();
+            if (sizeof($tenants) > 0) {
+                $slaveUser->default_tenant = $tenants[0];
+                $slaveUser->save();
+            }
         } else {
             //Permanent delete the tenant slave user
             $slaveUser->forceDelete();
