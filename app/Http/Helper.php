@@ -120,7 +120,7 @@ function isUserLimitReached()
 {
     // $totalUsers = \App\Models\TenantSlaveUser::where('tenant_ids', app('tenant')->id)->count();
 
-    $totalUsers = User::whereHas('role', function (Builder $query) {
+    $totalUsers = User::withTrashed()->whereHas('role', function (Builder $query) {
         $query->where('slug', 'employee')->orWhere('slug', 'admin');
     })->count();
 
