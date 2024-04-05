@@ -60,25 +60,27 @@ class AutoPunchOutEodCommand extends Command
                     ->whereNull('punch_out');
                 if ($punchDetails->exists()) {
                     $punchRecord = $punchDetails->first();
-                    if ($now->hour == 23 && $now->minute > 54) {
-                        $startHour = $punchRecord->punch_in;
-                        $endHour = Carbon::now();
+                    // if ($now->hour == 23 && $now->minute > 54) {
+                    $startHour = $punchRecord->punch_in;
+                    $endHour = Carbon::now();
 
-                        $diff = $startHour->floatDiffInMinutes($endHour);
-                        $diff = floatval(number_format($diff, 2));
+                    $diff = $startHour->floatDiffInMinutes($endHour);
+                    $diff = floatval(number_format($diff, 2));
 
-                        $punchRecord->punch_out = $endHour;
-                        $punchRecord->total_work_hour = $diff;
-                        $punchRecord->save();
-
-                        /** Update user preference to handel frontend use case **/
-                        if ($user->preferences != null) {
-                            $user->preferences->update(["punch_details" => "punch_out"]);
-                        } else {
-                            $user->preferences()->create(["punch_details" => "punch_out"]);
-                        }
-                    }
+                    $punchRecord->punch_out = $endHour;
+                    $punchRecord->total_work_hour = $diff;
+                    $punchRecord->save();
+                    // }
                 }
+
+                /** Update user preference to handel frontend use case **/
+                // if ($now->hour == 23 && $now->minute > 54) {
+                if ($user->preferences != null) {
+                    $user->preferences->update(["punch_details" => "punch_out"]);
+                } else {
+                    $user->preferences()->create(["punch_details" => "punch_out"]);
+                }
+                // }
             });
         });
     }

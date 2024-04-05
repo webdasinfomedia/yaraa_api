@@ -12,6 +12,7 @@ use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Http;
+use Jenssegers\Mongodb\Eloquent\Builder;
 
 if (!function_exists('app_path')) {
     /**
@@ -46,8 +47,9 @@ function getRoleById($id)
 
 function getUniqueStamp()
 {
-    return (int)round(microtime(true) * 1000 * rand(100, 999));
-};
+    return (int) round(microtime(true) * 1000 * rand(100, 999));
+}
+;
 
 function getUserTimezone()
 {
@@ -116,7 +118,11 @@ function getNotificationSettings($key)
 
 function isUserLimitReached()
 {
-    $totalUsers = \App\Models\TenantSlaveUser::where('tenant_ids', app('tenant')->id)->count();
+    // $totalUsers = \App\Models\TenantSlaveUser::where('tenant_ids', app('tenant')->id)->count();
+
+    $totalUsers = User::withTrashed()->whereHas('role', function (Builder $query) {
+        $query->where('slug', 'employee')->orWhere('slug', 'admin');
+    })->count();
 
     if (app('tenant')->user_limit) {
         return $totalUsers >= app('tenant')->user_limit ? true : false;
@@ -271,20 +277,21 @@ function getDefaultUserModel()
     ];
 }
 
-function getLocationFromCoordinates($lat,$long){
-    try{
+function getLocationFromCoordinates($lat, $long)
+{
+    try {
         // https://nominatim.openstreetmap.org/reverse.php?lat=23.0607826&lon=72.5113202&zoom=18&format=jsonv2
         $url = "https://nominatim.openstreetmap.org/reverse.php?lat=23.0607826&lon=72.5113202&format=jsonv2";
         $client = new Client();
-        $result = $client->get($url,[
+        $result = $client->get($url, [
             "lat" => $lat,
             "lon" => $long,
             "format" => "jsonv2"
         ]);
 
-        $result = json_decode($result->getBody()->getContents(),true);
+        $result = json_decode($result->getBody()->getContents(), true);
         return $result['address'];
-    } catch(\Exception $e) {
+    } catch (\Exception $e) {
         return null;
     }
 }

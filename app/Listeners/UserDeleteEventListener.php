@@ -112,7 +112,7 @@ class UserDeleteEventListener
 
         $taskComments->each(function ($comment) use ($user) {
             $locations = json_decode($comment->details, true);
-            if (!empty($locations)) {
+            if (!empty ($locations)) {
                 $filtered = Arr::where($locations, function ($locations) use ($user) {
                     return $locations['email'] != $user->email;
                 });
@@ -153,10 +153,12 @@ class UserDeleteEventListener
                 if ($group->created_by == $user->id) {
                     $members = $group->members->pluck('id')->toArray();
                     $key = array_search($user->id, $members);
-                    unset($members[$key]);
+                    unset ($members[$key]);
                     $members = array_values($members);
-                    $group->created_by = $members[0];
-                    $group->save();
+                    if (sizeof($members) > 0) {
+                        $group->created_by = $members[0];
+                        $group->save();
+                    }
                 }
                 $group->members()->detach($user->id);
             }
@@ -166,10 +168,12 @@ class UserDeleteEventListener
             if ($conversation->created_by == $user->id) {
                 $members = $conversation->members->pluck('id')->toArray();
                 $key = array_search($user->id, $members);
-                unset($members[$key]);
+                unset ($members[$key]);
                 $members = array_values($members);
-                $conversation->created_by = $members[0];
-                $conversation->save();
+                if (sizeof($members) > 0) {
+                    $conversation->created_by = $members[0];
+                    $conversation->save();
+                }
             }
             $user->conversations()->detach($conversation->id);
         });
@@ -245,12 +249,14 @@ class UserDeleteEventListener
 
             $members = $task->assignedTo->pluck('id')->toArray();
 
-            if ($task->created_by == $user->id  && sizeof($members) > 1) {
+            if ($task->created_by == $user->id && sizeof($members) > 1) {
                 $key = array_search($user->id, $members);
-                unset($members[$key]);
+                unset ($members[$key]);
                 $members = array_values($members);
-                $task->created_by = $members[0];
-                $task->save();
+                if (sizeof($members) > 0) {
+                    $task->created_by = $members[0];
+                    $task->save();
+                }
             }
 
             $task->assignedTo()->detach($user);
@@ -268,16 +274,19 @@ class UserDeleteEventListener
             if ($project->created_by == $user->id) {
                 $members = $project->members->pluck('id')->toArray();
                 $key = array_search($user->id, $members);
-                unset($members[$key]);
+                unset ($members[$key]);
                 $members = array_values($members);
-                $project->created_by = $members[0];
-                $project->save();
+                if (sizeof($members) > 0) {
+                    $project->created_by = $members[0];
+                    $project->save();
 
-                /** Make sure new owner has can edit role */
-                ProjectRole::updateOrCreate(
-                    ["project_id" => $project->id, "user_id" => $members[0]],
-                    ["role" => Project::CAN_EDIT]
-                );
+
+                    /** Make sure new owner has can edit role */
+                    ProjectRole::updateOrCreate(
+                        ["project_id" => $project->id, "user_id" => $members[0]],
+                        ["role" => Project::CAN_EDIT]
+                    );
+                }
             }
 
             $project->members()->detach($user);
@@ -323,8 +332,10 @@ class UserDeleteEventListener
             $key = array_search(app('tenant')->id, $tenants);
             unset($tenants[$key]);
             $tenants = array_values($tenants);
-            $slaveUser->default_tenant = $tenants[0];
-            $slaveUser->save();
+            if (sizeof($tenants) > 0) {
+                $slaveUser->default_tenant = $tenants[0];
+                $slaveUser->save();
+            }
         } else {
             //Permanent delete the tenant slave user
             $slaveUser->forceDelete();
