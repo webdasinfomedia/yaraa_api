@@ -128,7 +128,8 @@
         <![endif]-->
                             <div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
                                 style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
-                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
+                                    border="0">
                                     <tbody>
                                         <tr>
                                             <td style="word-break:break-word;font-size:0px;padding:0px;" align="center">
@@ -138,9 +139,11 @@
                                                     <tbody>
                                                         <tr>
                                                             <td style="width:138px;"><a href="https://discordapp.com/"
-                                                                    target="_blank"><img alt="" title="" height="38px"
+                                                                    target="_blank"><img alt="" title=""
+                                                                        height="38px"
                                                                         src="https://yaraa.3dlif.com/storage/logo.png"
-                                                                        style="border:none;border-radius:;display:block;outline:none;text-decoration:none;width:100%;"></a></td>
+                                                                        style="border:none;border-radius:;display:block;outline:none;text-decoration:none;width:100%;"></a>
+                                                            </td>
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -219,7 +222,8 @@
         <![endif]-->
                                 <div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
                                     style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
-                                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
+                                        border="0">
                                         <tbody>
                                             <tr>
                                                 <td style="word-break:break-word;font-size:0px;padding:0px 0px 20px;"
@@ -245,16 +249,18 @@
                                                 <td style="word-break:break-word;font-size:0px;padding:10px 25px;"
                                                     align="center">
                                                     <table role="presentation" cellpadding="0" cellspacing="0"
-                                                        style="border-collapse:separate;" align="center" border="0">
+                                                        style="border-collapse:separate;" align="center"
+                                                        border="0">
                                                         <tbody>
                                                             <tr>
                                                                 <td style="border:none;border-radius:3px;color:white;cursor:auto;padding:15px 19px;"
-                                                                    align="center" valign="middle" bgcolor="#7289DA"><a
-                                                                        href="{{ $verifyLink }}"
+                                                                    align="center" valign="middle" bgcolor="#7289DA">
+                                                                    <a href="{{ $verifyLink }}"
                                                                         style="text-decoration:none;line-height:100%;background:#7289DA;color:white;font-family:Ubuntu, Helvetica, Arial, sans-serif;font-size:15px;font-weight:normal;text-transform:none;margin:0px;"
                                                                         target="_blank">
                                                                         Verify Email
-                                                                    </a></td>
+                                                                    </a>
+                                                                </td>
                                                             </tr>
                                                         </tbody>
                                                     </table>
@@ -291,7 +297,8 @@
         <![endif]-->
                             <div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
                                 style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
-                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
+                                    border="0">
                                     <tbody>
                                         <tr>
                                             <td style="word-break:break-word;font-size:0px;">
@@ -317,7 +324,7 @@
           <tr>
             <td style="line-height:0px;font-size:0px;mso-line-height-rule:exactly;">
         <![endif]-->
-       
+
         <!--[if mso | IE]>
         </td></tr></table>
         <![endif]-->
@@ -337,30 +344,33 @@
         <![endif]-->
                             <div aria-labelledby="mj-column-per-100" class="mj-column-per-100 outlook-group-fix"
                                 style="vertical-align:top;display:inline-block;direction:ltr;font-size:13px;text-align:left;width:100%;">
-                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%" border="0">
+                                <table role="presentation" cellpadding="0" cellspacing="0" width="100%"
+                                    border="0">
                                     <tbody>
                                         <tr>
-                                            <td style="word-break:break-word;font-size:0px;padding:0px;" align="center">
+                                            <td style="word-break:break-word;font-size:0px;padding:0px;"
+                                                align="center">
                                                 <div
                                                     style="cursor:auto;color:#99AAB5;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:12px;line-height:24px;text-align:center;">
-                                                    Sent by Yaraa • <a href="https://dasinfomedia.com/blog"
+                                                    Sent by Yaraa • <a href="https://yaraai.com/blog/"
                                                         style="color:#1EB0F4;text-decoration:none;"
                                                         target="_blank">check our blog</a>
-                                                        <!-- • <a
-                                                        href="https://dasinfomedia.com/blog/"
+                                                    <!-- • <a
+                                                        href="https://yaraai.com/blog/"
                                                         style="color:#1EB0F4;text-decoration:none;"
                                                         target="_blank">@discordapp</a> -->
                                                 </div>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td style="word-break:break-word;font-size:0px;padding:0px;" align="center">
+                                        <!-- <tr>
+                                            <td style="word-break:break-word;font-size:0px;padding:0px;"
+                                                align="center">
                                                 <div
                                                     style="cursor:auto;color:#99AAB5;font-family:Whitney, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif;font-size:12px;line-height:24px;text-align:center;">
                                                     444 De Haro Street, Suite 200, San Francisco, CA 94107
                                                 </div>
                                             </td>
-                                        </tr>
+                                        </tr>-->
                                     </tbody>
                                 </table>
                             </div>
