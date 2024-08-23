@@ -27,7 +27,7 @@
                         <td style="text-align:center;">
                             <a href="https://dasinfomedia.com" title="logo" target="_blank">
                                 @php
-                                    $logoUrl = secure_url('storage/logo.png');
+                                    $logoUrl = url('storage/logo.png');
                                 @endphp
                                 <img src="{{ $logoUrl }}" width="256px" alt="logo">
                             </a>
